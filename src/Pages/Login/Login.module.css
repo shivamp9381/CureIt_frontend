@@ -1,0 +1,149 @@
+.loginContainer {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .leftContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  .slider {
+    text-align: center;
+  }
+  
+  .sliderImage {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+  }
+  
+  .sliderText {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .rightContainer {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .loginButton {
+    width: 100%;
+    padding: 15px;
+    background-color: #1b8dd3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .loginButton:hover {
+    background-color: #0e77b8;
+  }
+  
+  .signupPrompt {
+    margin-top: 20px;
+    color: #666;
+  }
+  
+  .signupLink {
+    color: #1b8dd3;
+    text-decoration: none;
+  }
+  
+  .signupLink:hover {
+    text-decoration: underline;
+  }
+  
+  .termsLink, .privacyLink {
+    color: #666;
+    text-decoration: none;
+  }
+  
+  .termsLink:hover, .privacyLink:hover {
+    text-decoration: underline;
+  }
+
+  .forgotPassword {
+    color: #1b8dd3;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .otp{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.3rem;
+    color: white;
+    background-color: #1b8dd3;
+  }
+
+  .otp:hover{
+    background-color: #0b78bd;
+    cursor: pointer;
+  }
+
+  .ph{
+    width: 100%;
+    height: 2rem;
+  }
+
+  .reset{
+    width: 8.5rem;
+    height: 2.5rem;
+    border-radius: 0.3rem;
+    color: white;
+    background-color: #1b8dd3;
+  }
+
+  .reset:hover{
+    background-color: #0b78bd;
+    cursor: pointer;
+  }
+
+
+  @media (max-width: 550px) {
+    .leftContainer {
+      display: none;
+    }
+  
+    .rightContainer {
+      flex: 1;
+      width: 100%;
+    }
+  }
+
