@@ -1,7 +1,8 @@
 .footer {
-    background-color: #14b80f;
+    background-color: #088a03dc;
     color: white;
     padding: 40px 0;
+    font-family: 'Courier New', Courier, monospace;
   }
   
   .footerContainer {
@@ -48,6 +49,7 @@
   .copyright {
     font-size: 14px;
     margin-top: 20px;
+    color: white;
   }
   
   /* Responsive design */
