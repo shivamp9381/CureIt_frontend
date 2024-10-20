@@ -1,0 +1,131 @@
+.signUpContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  .signUpContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* Transparency on the background */
+  }
+  
+  .contentWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    z-index: 1;
+  }
+  
+  .slider {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sliderImage {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .sliderText {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  .signUpForm {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  
+  .signUpForm h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .signUpForm p {
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .checkboxContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .checkboxContainer input {
+    margin-right: 10px;
+  }
+  .existingUserLink{
+    color: #1b8dd3;
+  }
+  .termsLink{
+    color: #1b8dd3;
+    text-decoration: none;
+  }
+  .signUpButton {
+    background-color: #1b8dd3;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .existingUser, .terms {
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  
+  @media (max-width: 550px) {
+    .slider {
+      display: none;
+    }
+  
+    .signUpForm {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .contentWrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
