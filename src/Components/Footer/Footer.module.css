@@ -1,4 +1,4 @@
-.footer {
+/* .footer {
     background-color: #088a03dc;
     color: white;
     padding: 40px 0;
@@ -52,7 +52,6 @@
     color: white;
   }
   
-  /* Responsive design */
   @media (max-width: 768px) {
     .footerContainer {
       flex-direction: column;
@@ -67,4 +66,94 @@
       text-align: center;
     }
   }
-  
+   */
+
+
+   .footer {
+    background-color: #088a03dc;
+    color: white;
+    padding: 40px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footerSection {
+    flex: 1;
+    min-width: 150px;
+    margin: 10px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+.sectionTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footerBottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.copyright {
+    font-size: 14px;
+    margin-top: 20px;
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 850px) {
+    .footerContainer {
+        /* flex-direction: column; Stack all sections vertically */
+        align-items: stretch; /* Make sections take up full width */
+    }
+
+    .footerSection {
+      margin-bottom: 20px; /* Add space between sections */
+      flex: 0 1 calc(50% - 20px); /* Allow two sections per row with margin adjustment */
+  }
+    
+    /* Optional: Specific order for "Doctors" and "About Us" */
+    .footerSection:nth-child(2),
+    .footerSection:nth-child(3) {
+        order: 1; /* Ensure these sections come first */
+    }
+}
+
+@media (max-width: 500px) {
+    .footerContainer {
+        flex-direction: column; /* Stack all sections vertically */
+        align-items: stretch; /* Make sections take up full width */
+    }
+
+    .footerSection {
+        flex: 1 1 100%; /* Allow all sections to take full width */
+        margin-bottom: 20px; /* Add space between sections */
+    }
+
+    .footerBottom {
+        text-align: center;
+    }
+}
