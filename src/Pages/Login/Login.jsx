@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Footer from "../../Components/Footer/Footer";
 import LoginModal from "../../Components/LoginModal/LoginModal";
 import styles from "./Login.module.css";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const images = [
   {
@@ -25,10 +26,10 @@ const images = [
 
 function Login() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isForgotPasswordModalOpen, setForgotPasswordModalOpen] =
-    useState(false);
+  const [isForgotPasswordModalOpen, setForgotPasswordModalOpen] = useState(false);
   const [isResetPasswordModalOpen, setResetPasswordModalOpen] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [otp, setOtp] = useState(""); // State to hold the OTP input
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,17 +49,23 @@ function Login() {
         phoneNumber,
       });
 
+      console.log(response.data.message); 
+
       if (response.data.message === "OTP sent successfully") {
-        setResetPasswordModalOpen(true);
-        setForgotPasswordModalOpen(false);
+        setResetPasswordModalOpen(true); // Open reset password modal
+        setForgotPasswordModalOpen(false); // Close forgot password modal
+      } else {
+        alert("Failed to send OTP. Please try again.");
       }
     } catch (error) {
       console.error(error);
+      alert("An error occurred. Please try again.");
     }
   };
 
   return (
     <>
+    <Navbar/>
       <div className={styles.loginContainer}>
         <div className={styles.leftContainer}>
           <div className={styles.slider}>
@@ -142,7 +149,13 @@ function Login() {
         <h2>Reset Password</h2>
         <br />
         <br />
-        <input className={styles.ph} type="text" placeholder="Enter OTP" />
+        <input
+          className={styles.ph}
+          type="text"
+          placeholder="Enter OTP"
+          value={otp}
+          onChange={(e) => setOtp(e.target.value)} // Handle OTP input
+        />
         <br />
         <br />
         <input
@@ -173,3 +186,4 @@ function Login() {
 }
 
 export default Login;
+
