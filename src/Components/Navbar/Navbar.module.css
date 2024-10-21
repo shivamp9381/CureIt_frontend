@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
+/* General Styles */
+* {
+    box-sizing: border-box;
+    font-family: "Syne", sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /* Navbar Container */
+  .navContainer {
+    position: sticky;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Navbar Box */
+  .navBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    height: 80px;
+    z-index: 1000;
+    top: 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Logo Styles */
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logoImage {
+    width: 95px;
+    height: 70px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .logoImage:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Navbar Buttons */
+  .navButtons {
+    display: flex;
+    justify-content: space-around;
+    width: 50rem;
+
+ 
+  }
+  
+  .navButton {
+    background-color:#0f6590dc;
+    color: white;
+    padding: 13px 16px;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .navButton:hover {
+    background-color: #088a03dc;
+    transform: translateY(-2px);
+  }
+  
+  /* Dropdown Arrow */
+  .dropdownArrow {
+    margin-left: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .rotate {
+    transform: rotate(180deg);
+  }
+  
+  .hamBtn:hover {
+    color: #ddd;
+    transform: translateX(5px);
+  }
+  
+  /* Right Section */
+  .rightSection {
+    display: flex;
+    align-items: center;
+    /* gap: 80px; */
+  }
+  
+  /* Search Bar */
+  .search {
+    position: relative;
+    margin-left: auto;
+   
+  }
+  
+  .searchInput {
+    padding: 8px 30px 8px 15px;
+    border: 2px solid #0f6590dc; /* Adds a solid border around the search input */
+    border-radius: 40px;
+    font-size: 14px;
+    width: 17rem;
+    transition: all 0.3s ease;
+  }
+  
+  .searchInput:focus {
+    width: 20rem;
+    /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); */
+    transition: all 0.3s ease;
+
+  }
+
+  .vertiList {
+    display: none;
+  }
+  
+  
+  .searchIcon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: rgb(23, 23, 23);
+    transition: all 0.3s ease;
+  }
+  
+
+  
+ 
+
+  /* Vertical List for Dropdown (Services) */
+.verticalList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+    background-color: white;
+    /* background-color: transparent; Updated to match your color scheme */
+    padding: 15px 20px; /* Increased padding for a more spacious look */
+    border-radius: 7px; /* Softer, rounded corners */
+    width: 100%; /* Fixed width for better alignment */
+    /* position: absolute; */
+    top: 16.32%;
+    z-index: 1000;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    opacity: 1;
+    pointer-events: none; /* Initially hidden */
+  }
+
+  
+  .verticalList.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all; /* Visible when dropdown is active */
+  }
+  
+  .verticalList div {
+    color: white;
+    background-color: #0f6590dc; /* Matching lighter background color for list items */
+    padding: 10px 15px; /* Generous padding for better spacing */
+    border-radius: 15px; /* Rounded corners for list items */
+    transition: all 0.3s ease;
+    font-size: 15px; /* Adjusted font size for readability */
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .verticalList div:hover {
+    background-color: #e2e6ea; /* Change background color on hover */
+    color: #0f6590dc; /* Change text color on hover */
+    transform: translateY(-2px); /* Adds a slight lift effect on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for hover effect */
+}
+  /* .verticalList div:hover {
+    background-color: #fff; 
+    color: #088a03dc; 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); */
+
+
+ 
+
+
+@media (max-width: 835px) {
+    /* Hide navigation buttons */
+    .navButtons {
+      display: none;
+    }
+
+  
+    /* Show the hamburger icon */
+ .hamburger {
+        display: block; /* Show the hamburger on small screens */
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        font-size: 30px; /* Increase size for better visibility */
+        color: #0f6590dc;
+        cursor: pointer;
+        z-index: 1100; /* Ensure it's on top */
+    }
+  
+    .hamburger:hover {
+      color: #088a03dc;
+      transform: scale(1); /* Slight hover effect */
+    }
+  
+    /* Hamburger menu container */
+    .hamburgerMenu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #222;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .logoImage {
+        width: 80px;
+        height: 60px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+    
+      .logo {
+        margin-left: auto; /* Push the logo to the extreme right */
+        margin-right: 0px; /* Add some padding to the right */
+        order: 2; /* Ensure it's the last item */
+      }
+  
+  
+    /* Menu slides in */
+    .hamburgerActive {
+      left: 0;
+    }
+  
+    /* Close button inside menu */
+    .closeHamburger {
+      align-self: flex-end;
+      font-size: 24px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+    }
+  
+    .closeHamburger:hover {
+      color: #ddd;
+      transform: scale(1.1);
+    }
+
+    .hamBtn{
+        color: white;
+        padding: 5px;
+
+    }
+
+    .hamBtn:hover{
+        background-color: #333;
+        color:  #088a03dc;;
+    }
+  
+    /* Menu item styles */
+    .hamburgerMenu a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 0;
+        font-size: 15px;
+        width: 100%;
+        text-align: left;
+        transition: all 0.3s ease;
+    }
+  
+    /* Right section (like cart, profile, etc.) hidden on mobile */
+    .rightSection {
+      display: none;
+    }
+  
+    /* Hide search bar */
+    .search {
+      display: none;
+    }
+  
+    /* Adjust logo size for mobile */
+    .logoImage {
+      width: 80px;
+      height: 60px;
+    }
+  
+    /* Adjust navbar box height */
+    .navBox {
+      height: 60px;
+    }
+  
+    /* Hide vertical dropdown list */
+    .verticalList {
+      display: none;
+    }
+  }
+
+  @media (min-width: 836px) {
+    .navButtons {
+        display: flex; /* Show the regular nav buttons */
+    }
+
+    /* Hide the hamburger and close buttons on larger screens */
+    .hamburger {
+        display: none;
+    }
+
+    .hamBtn {
+        display: none;
+    }
+
+    .closeHamburger {
+        display: none;
+    }
+}
+
+  
+  
