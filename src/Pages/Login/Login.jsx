@@ -1,32 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import styles from './Login.module.css';
-import Footer from '../../Components/Footer/Footer';
-import LoginModal from '../../Components/LoginModal/LoginModal';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import Footer from "../../Components/Footer/Footer";
+import LoginModal from "../../Components/LoginModal/LoginModal";
+import styles from "./Login.module.css";
 
 const images = [
-    {
-      image: 'https://i.ibb.co/2yj3S3t/Doctor-s-appointment.png',
-      text: 'Book appointments with your nearby doctors according to their specialization.',
-    },
-    {
-      image: 'https://i.ibb.co/Bn2d9Gm/Know-your-medicine.png',
-      text: 'View medicine information like dosage and side effects before you take them.',
-    },
-    {
-      image: 'https://i.ibb.co/BBhzByv/lab-tests-at-home.png',
-      text: 'Book any test from your nearby pathlabs.',
-    },
-    {
-      image: 'https://i.ibb.co/TPn4Bk3/Make-healthcare-simpler.png',
-      text: 'One stop solution for all your healthcare needs.',
-    },
-  ];
-  
+  {
+    image: "https://i.ibb.co/2yj3S3t/Doctor-s-appointment.png",
+    text: "Book appointments with your nearby doctors according to their specialization.",
+  },
+  {
+    image: "https://i.ibb.co/Bn2d9Gm/Know-your-medicine.png",
+    text: "View medicine information like dosage and side effects before you take them.",
+  },
+  {
+    image: "https://i.ibb.co/BBhzByv/lab-tests-at-home.png",
+    text: "Book any test from your nearby pathlabs.",
+  },
+  {
+    image: "https://i.ibb.co/TPn4Bk3/Make-healthcare-simpler.png",
+    text: "One stop solution for all your healthcare needs.",
+  },
+];
+
 function Login() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isForgotPasswordModalOpen, setForgotPasswordModalOpen] = useState(false);
+  const [isForgotPasswordModalOpen, setForgotPasswordModalOpen] =
+    useState(false);
   const [isResetPasswordModalOpen, setResetPasswordModalOpen] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,15 +37,24 @@ function Login() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleSendOtp = () => {
+  const handleSendOtp = async () => {
     if (!phoneNumber) {
       alert("Please enter your phone number.");
       return;
     }
 
-    // Logic to send OTP goes here
-    setResetPasswordModalOpen(true);
-    setForgotPasswordModalOpen(false);
+    try {
+      const response = await axios.post("http://localhost:8000/send-otp", {
+        phoneNumber,
+      });
+
+      if (response.data.message === "OTP sent successfully") {
+        setResetPasswordModalOpen(true);
+        setForgotPasswordModalOpen(false);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -51,7 +62,11 @@ function Login() {
       <div className={styles.loginContainer}>
         <div className={styles.leftContainer}>
           <div className={styles.slider}>
-            <img src={images[currentSlide].image} alt="Healthcare" className={styles.sliderImage} />
+            <img
+              src={images[currentSlide].image}
+              alt="Healthcare"
+              className={styles.sliderImage}
+            />
             <p className={styles.sliderText}>{images[currentSlide].text}</p>
           </div>
         </div>
@@ -59,18 +74,37 @@ function Login() {
         <div className={styles.rightContainer}>
           <h2>Login</h2>
           <p>Get access to your orders, lab tests & doctor consultations</p>
-          <input type="text" placeholder="Enter Email ID or Mobile Number" className={styles.inputField} />
-          <input type="password" placeholder="Enter Password" className={styles.inputField} />
+          <input
+            type="text"
+            placeholder="Enter Email ID or Mobile Number"
+            className={styles.inputField}
+          />
+          <input
+            type="password"
+            placeholder="Enter Password"
+            className={styles.inputField}
+          />
           <button className={styles.loginButton}>LOGIN</button>
           <p className={styles.signupPrompt}>
-            New on our platform? <a href="/signup" className={styles.signupLink}>Sign Up</a>
+            New on our platform?{" "}
+            <a href="/signup" className={styles.signupLink}>
+              Sign Up
+            </a>
           </p>
           <p>
-            By logging in, you agree to our{' '}
-            <a href="/terms" className={styles.termsLink}>Terms and Conditions</a> &{' '}
-            <a href="/privacy" className={styles.privacyLink}>Privacy Policy</a>
+            By logging in, you agree to our{" "}
+            <a href="/terms" className={styles.termsLink}>
+              Terms and Conditions
+            </a>{" "}
+            &{" "}
+            <a href="/privacy" className={styles.privacyLink}>
+              Privacy Policy
+            </a>
           </p>
-          <p className={styles.forgotPassword} onClick={() => setForgotPasswordModalOpen(true)}>
+          <p
+            className={styles.forgotPassword}
+            onClick={() => setForgotPasswordModalOpen(true)}
+          >
             Forgot Password?
           </p>
         </div>
@@ -79,37 +113,60 @@ function Login() {
       <Footer />
 
       {/* Forgot Password Modal */}
-      <LoginModal isOpen={isForgotPasswordModalOpen} onClose={() => setForgotPasswordModalOpen(false)}>
+      <LoginModal
+        isOpen={isForgotPasswordModalOpen}
+        onClose={() => setForgotPasswordModalOpen(false)}
+      >
         <h2>Forgot Password</h2>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <input
-        className={styles.ph}
+          className={styles.ph}
           type="text"
           placeholder="Enter Phone Number"
           value={phoneNumber}
           onChange={(e) => setPhoneNumber(e.target.value)}
         />
-        <br/>
-        <br/>
-        <button className={styles.otp} onClick={handleSendOtp}>Send OTP</button>
+        <br />
+        <br />
+        <button className={styles.otp} onClick={handleSendOtp}>
+          Send OTP
+        </button>
       </LoginModal>
 
       {/* Reset Password Modal */}
-      <LoginModal isOpen={isResetPasswordModalOpen} onClose={() => setResetPasswordModalOpen(false)}>
+      <LoginModal
+        isOpen={isResetPasswordModalOpen}
+        onClose={() => setResetPasswordModalOpen(false)}
+      >
         <h2>Reset Password</h2>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <input className={styles.ph} type="text" placeholder="Enter OTP" />
-        <br/>
-        <br/>
-        <input className={styles.ph}  type="password" placeholder="Enter New Password" />
-        <br/>
-        <br/>
-        <input className={styles.ph}  type="password" placeholder="Confirm New Password" />
-        <br/>
-        <br/>
-        <button className={styles.reset} onClick={() => { /* Logic to reset password */ }}>Reset Password</button>
+        <br />
+        <br />
+        <input
+          className={styles.ph}
+          type="password"
+          placeholder="Enter New Password"
+        />
+        <br />
+        <br />
+        <input
+          className={styles.ph}
+          type="password"
+          placeholder="Confirm New Password"
+        />
+        <br />
+        <br />
+        <button
+          className={styles.reset}
+          onClick={() => {
+            /* Logic to reset password */
+          }}
+        >
+          Reset Password
+        </button>
       </LoginModal>
     </>
   );
