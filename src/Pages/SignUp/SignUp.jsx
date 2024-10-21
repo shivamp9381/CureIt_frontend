@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../Login/Login.module.css';
 import Footer from '../../Components/Footer/Footer'
+import Navbar from '../../Components/Navbar/Navbar';
 
 const images = [
   {
@@ -33,6 +34,7 @@ function SignUp() {
 
   return (
     <>
+    <Navbar/>
 
     <div className={styles.loginContainer}>
       <div className={styles.leftContainer}>
