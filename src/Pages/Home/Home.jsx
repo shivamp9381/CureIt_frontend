@@ -11,8 +11,9 @@ const Home = () => {
     <div>
         <Navbar/>
         <Hero/>
-        <HomeCards/>
+        
         <Benefits/>
+        <HomeCards/>
         <BottomBanner/>
         <Footer/>
     </div>
