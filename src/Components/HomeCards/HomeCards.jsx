@@ -34,7 +34,7 @@ const HomeCards = () => {
 
   return (
     <>
-    <div className={styles.head}>Browse by category</div>
+    <div className={styles.head}><h1>Browse by category</h1></div>
     <div className={styles.container}>
       <div className={styles.sliderContainer}>
         <button className={styles.navButton} onClick={scrollLeft}>{'<'}</button>

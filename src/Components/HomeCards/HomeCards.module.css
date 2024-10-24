@@ -1,5 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    font-family: 'Syne', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
 .container {
   background-color: white;
+}
+
+.head{
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  color: #0f6590dc;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  transform: translateY(20px);
+  transition: transform 1s ease-in-out 0.2s;
+  text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.5);
+}
+
+.head h1{
+  padding: 17px;
+  padding-left: 40px;
 }
 
 .sliderContainer {
@@ -24,9 +54,9 @@
 
 .card {
   flex: 0 0 25%; 
-  margin: 0 10px;
+  margin: 25px 15px;
   border-radius: 10px;
-  padding: 20px;
+  padding: 20px 20px;
   text-align: center;
   transition: box-shadow 0.3s ease;
 }
@@ -38,26 +68,31 @@
 }
 
 .card img {
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   margin-bottom: 10px;
+  border-radius: 50%;
+  object-fit:fill;
 }
-
 .card h3 {
   font-size: 1rem;
   color: #333;
 }
 
 .navButton {
-  background-color: #0f6590;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 10px 10px;
   font-size: 1.5rem;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
   transform: translateY(-50%);
   z-index: 1;
 }
