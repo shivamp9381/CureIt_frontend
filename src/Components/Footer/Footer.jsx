@@ -115,7 +115,7 @@ const Footer = () => {
       <div className={styles.footerBottom}>
         <p className={styles.copyright}>© Cureit 2024</p>
         <div className={`${styles.social_icons}`}>
-            <a href="https://Linkedin.com"><i className="fab fa-facebook"></i></a>
+            <a href="https://Linkedin.com"><i className="fab fa-linkedin"></i></a>
             <a href="https://instagram.com"><i className="fab fa-instagram"></i></a>
             <a href="https://gmail.com"><i className="fas fa-envelope"></i></a>
           </div>
