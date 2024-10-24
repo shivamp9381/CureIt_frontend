@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from '../Login/Login.module.css';
 import Footer from '../../Components/Footer/Footer'
 import Navbar from '../../Components/Navbar/Navbar';
+import BottomBanner from '../../Components/BottomBanner/BottomBanner';
 
 const images = [
   {
@@ -68,6 +69,7 @@ function SignUp() {
       </div>
     </div>
 
+    <BottomBanner/>
     <Footer/>
     </>
   );
