@@ -4,6 +4,7 @@ import Footer from "../../Components/Footer/Footer";
 import LoginModal from "../../Components/LoginModal/LoginModal";
 import styles from "./Login.module.css";
 import Navbar from "../../Components/Navbar/Navbar";
+import BottomBanner from "../../Components/BottomBanner/BottomBanner"
 
 const images = [
   {
@@ -117,6 +118,7 @@ function Login() {
         </div>
       </div>
 
+      <BottomBanner/>
       <Footer />
 
       {/* Forgot Password Modal */}
