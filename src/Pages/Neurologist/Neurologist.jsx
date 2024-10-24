@@ -11,6 +11,7 @@ const Neurologist = () => {
   return (
     <>
     <Navbar/>
+    <div className={styles.head}><h1>Having trouble with your brain?</h1></div>
     <div className={styles.banner}>
       <div className={styles.item}>
         <DoctorIcon className={styles.icon} /> {/* Use SVG component */}

@@ -42,6 +42,22 @@
     background-color: rgb(176, 176, 176);
     fill: green;     
 }
+.head h1{
+  padding: 17px;
+  padding-left: 40px;
+}
+.head{
+  background-color: #f9f9f9;
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+  color: #0f6590dc;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  transform: translateY(20px);
+  transition: transform 1s ease-in-out 0.2s;
+  text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.5);
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {

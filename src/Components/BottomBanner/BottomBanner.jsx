@@ -6,6 +6,9 @@ import { ReactComponent as SecureIcon } from './secure.svg';
 import { ReactComponent as AffordableIcon } from './affordable.svg';
 
 const BottomBanner = () => {
+
+
+
   return (
     <div className={styles.banner}>
       <div className={styles.item}>

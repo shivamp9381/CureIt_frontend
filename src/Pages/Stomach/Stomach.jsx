@@ -11,6 +11,7 @@ const Stomach = () => {
   return (
     <>
     <Navbar/>
+    <div className={styles.head}><h1>Facing Stomach Issues?</h1></div>
     <div className={styles.banner}>
       <div className={styles.item}>
         <DoctorIcon className={styles.icon} /> {/* Use SVG component */}
