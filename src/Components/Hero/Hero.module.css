@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Syne', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  .sliderContainer {
+    width: 100%;
+    height: 43.6rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .slidesWrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  }
+  
+  .active {
+    z-index: 1;
+  }
+  
+  .transitioning {
+    z-index: 2;
+  }
+  
+  .slideImage {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(0.8);
+    transition: filter 1s ease-in-out;
+  }
+  
+  .active .slideImage {
+    filter: brightness(1);
+  }
+  
+  .slideContent {
+    color: white;
+    padding: 58px;
+    position: absolute;
+    left: 1rem;
+    margin-left: 40px;
+    top: 50%; 
+    transform: translateY(-50%);
+    z-index: 1;
+    max-width: 50%;
+    text-align: left; 
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .active .slideContent {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  
+  .slideContent h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    transform: translateY(20px);
+    transition: transform 1s ease-in-out 0.2s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .slideContent h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 400;
+    transform: translateY(20px);
+    transition: transform 1s ease-in-out 0.4s;
+    color: #f0f0f0;
+  }
+  
+  .slideContent p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    transform: translateY(20px);
+    transition: transform 1s ease-in-out 0.6s;
+    color: #e0e0e0;
+  }
+  
+  .active .slideContent h1,
+  .active .slideContent h2,
+  .active .slideContent p {
+    transform: translateY(0);
+  }
+  
+  .shopBtn {
+    background-color:#0f6590dc;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    width: fit-content;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out 0.8s, transform 1s ease-in-out 0.8s, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .active .shopBtn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .shopBtn:hover {
+    background-color: #1a2e29;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .sliderBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 20px;
+    z-index: 2;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .prevBtn {
+    left: 20px;
+  }
+  
+  .nextBtn {
+    right: 20px;
+  }
+  
+  .sliderBtn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.2);
+  }
+  
+  .indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .activeIndicator {
+    background-color: #fff;
+    transform: scale(1.2);
+  }
+  
+  @media (max-width: 1024px) {
+    .sliderContainer {
+      height: 22.2rem;
+    }
+  
+    .slideImage {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  
+    .slideContent {
+      left: -40px;
+      max-width: 50%;
+    }
+  
+    .slideContent h1 {
+      font-size: 3rem;
+    }
+  
+    .slideContent h2 {
+      font-size: 1.3rem;
+    }
+  
+    .slideContent p {
+      font-size: 1rem;
+    }
+  
+    .shopBtn {
+      font-size: 1.1rem;
+      padding: 10px 22px;
+    }
+  }
+  
+  @media (min-width: 1024px) and (max-width: 1375px) {
+    .sliderContainer {
+      height: 29.6rem;
+    }
+  
+    .slideImage {
+      width: 100%;
+      height: auto;
+    }
+  
+    .slideContent {
+      left: 1px;
+      max-width: 45%;
+    }
+  
+    .slideContent h1 {
+      font-size: 3rem;
+    }
+  
+    .slideContent h2 {
+      font-size: 1.3rem;
+    }
+  
+    .slideContent p {
+      font-size: 1rem;
+    }
+  
+    .shopBtn {
+      font-size: 1.1rem;
+      padding: 10px 22px;
+    }
+  }
+  
+  @media (max-width: 570px) {
+    .sliderContainer {
+      height:33em;
+    }
+  
+    .slideImage {
+      height: auto; /* Ensure the height auto adjusts for vertical images */
+      width: 100%; /* Make sure the image takes the full width */
+      object-fit:contain; /* Maintain aspect ratio and cover the area */
+    }
+    
+
+    .sliderBtn {
+      padding: 12px;
+      font-size: 18px;
+    }
+
+    
+  }
+  
+  @media (min-width: 570px) and (max-width: 800px) {
+    .sliderContainer {
+      height: 16.5rem;
+    }
+  
+    .slideImage {
+      width: 100%;
+      height: auto;
+    }
+  
+    .slideContent {
+      padding: 40px 40px;
+      border-radius: 0;
+      max-width: 50%;
+    }
+  
+    .slideContent h1 {
+      font-size: 1.6rem;
+    }
+  
+    .slideContent h2 {
+      font-size: 1rem;
+    }
+  
+    .slideContent p {
+      font-size: 0.7rem;
+    }
+  
+    .shopBtn {
+      font-size: 0.7rem;
+      padding: 10px 20px;
+    }
+  
+    .sliderBtn {
+      padding: 10px;
+      font-size: 16px;
+    }
+  }
