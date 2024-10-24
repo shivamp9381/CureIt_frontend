@@ -1,17 +1,18 @@
 import React from 'react'
-import styles from './Home.module.css'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
-import About from '../../Components/About/About'
 import BottomBanner from '../../Components/BottomBanner/BottomBanner'
 import Hero from '../../Components/Hero/Hero'
+import HomeCards from '../../Components/HomeCards/HomeCards'
+import Benefits from '../../Components/Benefits/Benefits'
 
 const Home = () => {
   return (
     <div>
         <Navbar/>
         <Hero/>
-        <About/>
+        <HomeCards/>
+        <Benefits/>
         <BottomBanner/>
         <Footer/>
     </div>
