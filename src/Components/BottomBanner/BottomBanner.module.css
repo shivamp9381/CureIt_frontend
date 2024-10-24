@@ -139,7 +139,7 @@ p {
 .item:hover, .item.selected {
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
-    background-color: #8ac1fb;
+    background-color: rgb(176, 176, 176);
 }
 
 /* Responsive Adjustments */
