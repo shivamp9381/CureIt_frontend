@@ -28,7 +28,7 @@ const HomeCards = () => {
     { title: 'Care for your kidney', img: 'https://i.ibb.co/Lr7Pc9f/Kidney-care.png' },
     { title: 'Having issues with your nervous system?', img: 'https://i.ibb.co/wQQYVQv/nervous-system-care.png' },
     { title: 'Child having some health issues?', img: 'https://i.ibb.co/xJnLZHp/pediatrics.png' },
-    { title: 'Ladies problem?', img: 'https://i.ibb.co/wQQYVQv/nervous-system-care.png' },
+    { title: 'Ladies problem?', img: 'https://i.ibb.co/LnJbCk4/gynaecologist.png' },
     { title: 'Want an Ayurvedic solution?', img: 'https://i.ibb.co/ZSfGWDD/Ayurveda.png' }
   ];
 
