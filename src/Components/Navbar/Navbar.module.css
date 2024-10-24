@@ -15,7 +15,7 @@
     position: sticky;
     width: 100%;
     z-index: 1000;
-    top: 0;
+    top: 0; 
     transition: all 0.3s ease;
   }
   
@@ -98,7 +98,7 @@
   .rightSection {
     display: flex;
     align-items: center;
-    /* gap: 80px; */
+    gap: 80px;
   }
   
   /* Search Bar */
@@ -124,8 +124,37 @@
 
   }
 
+  .profile {
+    font-size: 24px;
+    color: #0f6590dc;
+    padding-right:  1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+
+  .profile:hover {
+    color:  #088a03dc;
+    transform: scale(1.1);
+  }
+
+
+
   .vertiList {
     display: none;
+  }
+
+  .vertiList.show {
+    display: flex; /* Change to flex when active */
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 7px;
+    width: 100%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
   }
   
   
@@ -142,52 +171,48 @@
 
   
  
-
-  /* Vertical List for Dropdown (Services) */
+/* Vertical List for Dropdown (Services) */
 .verticalList {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 10px;
-    background-color: white;
-    /* background-color: transparent; Updated to match your color scheme */
-    padding: 15px 20px; /* Increased padding for a more spacious look */
-    border-radius: 7px; /* Softer, rounded corners */
-    width: 100%; /* Fixed width for better alignment */
-    /* position: absolute; */
-    top: 16.32%;
-    z-index: 1000;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    opacity: 1;
-    pointer-events: none; /* Initially hidden */
-  }
-
-  
-  .verticalList.show {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all; /* Visible when dropdown is active */
-  }
-  
-  .verticalList div {
-    color: white;
-    background-color: #0f6590dc; /* Matching lighter background color for list items */
-    padding: 10px 15px; /* Generous padding for better spacing */
-    border-radius: 15px; /* Rounded corners for list items */
-    transition: all 0.3s ease;
-    font-size: 15px; /* Adjusted font size for readability */
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .verticalList div:hover {
-    background-color: #e2e6ea; /* Change background color on hover */
-    color: #0f6590dc; /* Change text color on hover */
-    transform: translateY(-2px); /* Adds a slight lift effect on hover */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for hover effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 7px;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  opacity: 1; /* Initially hidden */
+  pointer-events: none; /* Prevent interactions when hidden */
 }
+
+.verticalList.show {
+  opacity: 0;
+  transform: translateY(0);
+  pointer-events: all; /* Visible when dropdown is active */
+}
+
+.verticalList div {
+  color: white;
+  background-color: #0f6590dc;
+  padding: 10px 15px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.verticalList div:hover {
+  background-color: #e2e6ea; /* Change background color on hover */
+  color: #0f6590dc; /* Change text color on hover */
+  transform: translateY(-2px); /* Adds a slight lift effect on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for hover effect */
+}
+
   /* .verticalList div:hover {
     background-color: #fff; 
     color: #088a03dc; 
@@ -198,7 +223,7 @@
  
 
 
-@media (max-width: 835px) {
+@media (max-width: 1038px) {
     /* Hide navigation buttons */
     .navButtons {
       display: none;
@@ -237,7 +262,45 @@
       padding: 20px;
       transition: all 0.3s ease;
       z-index: 1000;
+      overflow-y: auto; /* Enable scrolling if the content exceeds the height */
     }
+
+
+.hamburgerMenu .vertiList.show {
+  display: flex; /* Change to flex when active */
+  flex-direction: column;
+  gap: 12px;
+  background-color: #333;
+  padding: 15px 20px;
+  border-radius: 6px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.hamburgerMenu .vertiList div {
+  color: white;
+  background-color: #0f6590dc;
+  padding: 10px 15px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hamburgerMenu .hamBtn {
+  color: white;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.hamburgerMenu .hamBtn:hover {
+  background-color: #333;
+  color: #088a03dc;
+}
+
+.hamburgerMenu .vertiList div:hover {
+  background-color: #444;
+  color: #088a03dc;
+}
 
     .logoImage {
         width: 80px;
@@ -248,9 +311,25 @@
     
       .logo {
         margin-left: auto; /* Push the logo to the extreme right */
-        margin-right: 0px; /* Add some padding to the right */
+        margin-right: -20px; /* Add some padding to the right */
         order: 2; /* Ensure it's the last item */
       }
+
+      .profile{
+        display: block;
+      }
+      
+  /* .logoImage {
+    width: 95px;
+    height: 70px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .logoImage:hover {
+    transform: scale(1.05);
+  } */
+
   
   
     /* Menu slides in */
@@ -281,6 +360,7 @@
 
     }
 
+   
     .hamBtn:hover{
         background-color: #333;
         color:  #088a03dc;;
@@ -324,7 +404,7 @@
     }
   }
 
-  @media (min-width: 836px) {
+  @media (min-width: 1038px) {
     .navButtons {
         display: flex; /* Show the regular nav buttons */
     }
@@ -340,6 +420,10 @@
 
     .closeHamburger {
         display: none;
+    }
+
+    .hamburgerMenu{
+      display: none;
     }
 }
 
