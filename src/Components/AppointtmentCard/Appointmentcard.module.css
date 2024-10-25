@@ -1,0 +1,97 @@
+.appointmentCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    /* Keep the original light grey border */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    /* Original white background */
+    width: 100%;
+    max-width: 600px;
+    height: 40%;
+}
+
+.doctorInfo {
+    display: flex;
+    /* Ensure doctor info is displayed in a row */
+    align-items: center;
+    width: 100%;
+    /* Make sure it uses full width */
+}
+
+.doctorImage {
+    width: 50%;
+    /* Adjust as needed */
+    height: auto;
+    border-radius: 50%;
+    margin-right: 20px;
+    /* Space between image and text */
+}
+
+.ratingStories {
+    margin-top: 10px;
+}
+
+.rating {
+    color: green;
+    /* Original green for ratings */
+    font-weight: bold;
+}
+
+.availableStatus {
+    color: green;
+    /* Original green for availability */
+    font-weight: bold;
+}
+
+.bookBtn {
+    background-color: #0f6590dc;
+    /* Original blue for button */
+    color: white;
+    margin-top: 2rem;
+    padding: 10px 20px;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-end;
+    /* Align button to the right */
+}
+
+.docProfile {
+    background-color: #0f6590dc;
+    /* Original blue for button */
+    color: white;
+    margin-top: 2rem;
+    padding: 10px 20px;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-end;
+    /* Align button to the right */
+}
+
+
+.bookBtn:hover {
+    background-color: #088a03dc;
+    transform: translateY(-2px);
+}
+
+.docProfile:hover {
+    background-color: #088a03dc;
+    transform: translateY(-2px);
+}
+
+.appointmentCard:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    background-color: rgb(176, 176, 176);
+
+}

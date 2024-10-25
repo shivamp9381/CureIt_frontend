@@ -13,6 +13,9 @@ import Neurologist from './Pages/Neurologist/Neurologist'
 import Pediatrician from './Pages/Pediatrician/Pediatrician'
 import Gynaecologist from './Pages/Gynaecologist/Gynaecologist'
 import Ayurveda from './Pages/Ayurveda/Ayurveda'
+import Eyes from './Pages/Eyes/Eyes';
+import ENT from './Pages/ENT/ENT';
+import Ortho from './Pages/Ortho/Ortho';
 import Appointments from './Pages/Appointments/Appointments';
 import About from './Pages/About/About'
 
@@ -25,7 +28,7 @@ function App() {
           <Route
             exact path="/" element={<Home />}
           />
-          
+
           <Route
             exact path="/about" element={<About />}
           />
@@ -63,8 +66,18 @@ function App() {
             exact path="/gynaecologist" element={<Gynaecologist />}
           />
           <Route
+            exact path="/eyes" element={<Eyes/>}
+          />
+          <Route
+            exact path="/ent" element={<ENT/>}
+          />
+          <Route
+            exact path="/ortho" element={<Ortho />}
+          />
+          <Route
             exact path="/ayurveda" element={<Ayurveda />}
-          />         
+          />
+
           <Route
             exact path="/appointments" element={<Appointments />}
           />
