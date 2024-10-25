@@ -6,14 +6,21 @@ import { ReactComponent as LabTestIcon } from '../../icons/lab tests.svg'; // Im
 import { ReactComponent as MedicineIcon } from '../../icons/medicin.svg'; // Import your SVGs
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
+import { useNavigate } from 'react-router-dom';
 
 const Eyes = () => {
+  const navigate = useNavigate();
+
+  const handleBookAppointment = () => {
+    navigate('/appointments?speciality=Eyes');
+  };
+
   return (
     <>
     <Navbar/>
     <div className={styles.head}><h1> Need  a Opthalmologist? </h1></div>
     <div className={styles.banner}>
-      <div className={styles.item}>
+      <div className={styles.item} onClick={handleBookAppointment}>
         <DoctorIcon className={styles.icon} /> {/* Use SVG component */}
         <h3 className={styles.title}>Book your appointment with a physician</h3>
       </div>

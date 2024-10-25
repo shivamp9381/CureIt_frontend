@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom'; // Import useSearchParams
 import Navbar from '../../Components/Navbar/Navbar';
 import BottomBanner from '../../Components/BottomBanner/BottomBanner';
 import Footer from '../../Components/Footer/Footer';
@@ -6,12 +7,42 @@ import AppointmentCard from '../../Components/AppointtmentCard/AppointmentCard';
 import styles from './Appointments.module.css';
 
 const Appointments = () => {
+    const [searchParams] = useSearchParams(); // Get search parameters
+    const [location, setLocation] = useState('');
+    const [speciality, setSpeciality] = useState(searchParams.get('speciality') || ''); // Get specialty from URL
+
     const appointmentsData = [
         {
             doctor: {
                 name: "Doctor's Name",
                 image: 'https://i.ibb.co/QYH37gg/doctor-profile.png', // Placeholder doctor image
-                speciality: 'Speciality',
+                speciality: 'Physician', // Example specialty
+                clinic: 'Clinic Name',
+            },
+            experience: 15,
+            location: 'Varanasi, Uttar Pradesh',
+            fee: 750,
+            rating: 90,
+            available: true,
+        },
+        {
+            doctor: {
+                name: "Doctor's Name",
+                image: 'https://i.ibb.co/QYH37gg/doctor-profile.png',
+                speciality: 'Dermatologist',
+                clinic: 'Clinic Name',
+            },
+            experience: 10,
+            location: 'Varanasi, Uttar Pradesh',
+            fee: 500,
+            rating: 85,
+            available: true,
+        },
+        {
+            doctor: {
+                name: "Doctor's Name",
+                image: 'https://i.ibb.co/QYH37gg/doctor-profile.png', // Placeholder doctor image
+                speciality: 'Physician', // Example specialty
                 clinic: 'Clinic Name',
             },
             experience: 15,
@@ -24,7 +55,7 @@ const Appointments = () => {
             doctor: {
                 name: "Doctor's Name",
                 image: 'https://i.ibb.co/QYH37gg/doctor-profile.png', // Placeholder doctor image
-                speciality: 'Speciality',
+                speciality: 'Physician', // Example specialty
                 clinic: 'Clinic Name',
             },
             experience: 15,
@@ -37,7 +68,7 @@ const Appointments = () => {
             doctor: {
                 name: "Doctor's Name",
                 image: 'https://i.ibb.co/QYH37gg/doctor-profile.png', // Placeholder doctor image
-                speciality: 'Speciality',
+                speciality: 'Cardio', // Example specialty
                 clinic: 'Clinic Name',
             },
             experience: 15,
@@ -50,7 +81,7 @@ const Appointments = () => {
             doctor: {
                 name: "Doctor's Name",
                 image: 'https://i.ibb.co/QYH37gg/doctor-profile.png', // Placeholder doctor image
-                speciality: 'Speciality',
+                speciality: 'ENT', // Example specialty
                 clinic: 'Clinic Name',
             },
             experience: 15,
@@ -63,7 +94,7 @@ const Appointments = () => {
             doctor: {
                 name: "Doctor's Name",
                 image: 'https://i.ibb.co/QYH37gg/doctor-profile.png', // Placeholder doctor image
-                speciality: 'Speciality',
+                speciality: 'Pedia', // Example specialty
                 clinic: 'Clinic Name',
             },
             experience: 15,
@@ -76,7 +107,7 @@ const Appointments = () => {
             doctor: {
                 name: "Doctor's Name",
                 image: 'https://i.ibb.co/QYH37gg/doctor-profile.png', // Placeholder doctor image
-                speciality: 'Speciality',
+                speciality: 'Ayurveda', // Example specialty
                 clinic: 'Clinic Name',
             },
             experience: 15,
@@ -85,11 +116,66 @@ const Appointments = () => {
             rating: 90,
             available: true,
         },
+        {
+            doctor: {
+                name: "Doctor's Name",
+                image: 'https://i.ibb.co/QYH37gg/doctor-profile.png', // Placeholder doctor image
+                speciality: 'Gstro', // Example specialty
+                clinic: 'Clinic Name',
+            },
+            experience: 15,
+            location: 'Varanasi, Uttar Pradesh',
+            fee: 750,
+            rating: 90,
+            available: true,
+        },
+        {
+            doctor: {
+                name: "Doctor's Name",
+                image: 'https://i.ibb.co/QYH37gg/doctor-profile.png', // Placeholder doctor image
+                speciality: 'Physician', // Example specialty
+                clinic: 'Clinic Name',
+            },
+            experience: 15,
+            location: 'Varanasi, Uttar Pradesh',
+            fee: 750,
+            rating: 90,
+            available: true,
+        },
+        {
+            doctor: {
+                name: "Doctor's Name",
+                image: 'https://i.ibb.co/QYH37gg/doctor-profile.png', // Placeholder doctor image
+                speciality: 'Ortho', // Example specialty
+                clinic: 'Clinic Name',
+            },
+            experience: 15,
+            location: 'Varanasi, Uttar Pradesh',
+            fee: 750,
+            rating: 90,
+            available: true,
+        },
+        {
+            doctor: {
+                name: "Doctor's Name",
+                image: 'https://i.ibb.co/QYH37gg/doctor-profile.png', // Placeholder doctor image
+                speciality: 'Physio', // Example specialty
+                clinic: 'Clinic Name',
+            },
+            experience: 15,
+            location: 'Varanasi, Uttar Pradesh',
+            fee: 750,
+            rating: 90,
+            available: true,
+        },
+
     ];
 
-    const [location, setLocation] = useState('');
-    const [speciality, setSpeciality] = useState('');
     const [filteredAppointments, setFilteredAppointments] = useState(appointmentsData);
+
+    useEffect(() => {
+        handleSearch(); // Filter appointments on component mount
+    }, [location, speciality]);
 
     const handleSearch = () => {
         const filtered = appointmentsData.filter(appointment =>
@@ -105,7 +191,7 @@ const Appointments = () => {
 
             <div className={styles.pageHead}>
                 <div className={styles.headText}>Schedule Your Wellness Journey: Find Your Local Doctor Today!</div>
-                <p className={styles.headPara}>Ready to take charge of your health? Let us connect you with top-notch doctors right in your neighborhood! Whether you need a routine check-up or specialized care, we’ve got you covered.</p>
+                <p className={styles.headPara}>Ready to take charge of your health? Let us connect you with top-notch doctors right in your neighborhood!</p>
             </div>
             {/* Search Filter Section */}
             <div className={styles.searchFilter}>
