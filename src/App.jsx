@@ -14,6 +14,7 @@ import Pediatrician from './Pages/Pediatrician/Pediatrician'
 import Gynaecologist from './Pages/Gynaecologist/Gynaecologist'
 import Ayurveda from './Pages/Ayurveda/Ayurveda'
 import Appointments from './Pages/Appointments/Appointments';
+import About from './Pages/About/About'
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
 
           <Route
             exact path="/" element={<Home />}
+          />
+          
+          <Route
+            exact path="/about" element={<About />}
           />
 
           <Route

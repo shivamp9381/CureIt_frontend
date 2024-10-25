@@ -29,6 +29,12 @@ const Navbar = () => {
       navigate('/login');
     }
   };
+
+  const handleAboutClick = () => {
+    
+      navigate('/about');
+    
+  };
   const handleDropdownItemClick = () => {
     setIsDropdownOpen(false); // Close dropdown when an item is clicked
   };
@@ -85,7 +91,7 @@ const Navbar = () => {
             </div>
             <Link to="/partners"><button className={style.navButton}>For Partners</button></Link>
             <Link to="/doctors"><button className={style.navButton}>For Doctors</button></Link>
-            <button className={style.navButton}>About Us</button>
+            <button onClick={handleAboutClick} className={style.navButton}>About Us</button>
           </div>
 
           <div className={style.rightSection}>
