@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './Appointmentcard.module.css'; // Import CSS module
+import styles from './Appointmentcard.module.css';
 
-const AppointmentCard = ({ doctor, experience, location, fee, rating, available }) => {
+const AppointmentCard = ({ doctor, experience, location, fee, rating, available, onBookClick }) => {
     return (
         <div className={styles.appointmentCard}>
             <div className={styles.doctorInfo}>
@@ -14,15 +14,17 @@ const AppointmentCard = ({ doctor, experience, location, fee, rating, available 
                     <p>{location}</p>
                     <p>₹{fee} Consultation Fee at clinic</p>
                     <div className={styles.ratingStories}>
-                        <span className={styles.rating}>Likes:  {rating}%</span>
+                        <span className={styles.rating}>Likes: {rating}%</span>
                     </div>
                     {available && <div className={styles.availableStatus}>Available Today</div>}
                 </div>
             </div>
-            <button className={styles.bookBtn}>Book Clinic Visit</button>
+            <button className={styles.bookBtn} onClick={onBookClick}>
+                Book Clinic Visit
+            </button>
             <button className={styles.docProfile}>View Doctor's Profile</button>
         </div>
     );
 };
 
-export  default AppointmentCard;
+export default AppointmentCard;
