@@ -13,6 +13,7 @@ import Neurologist from './Pages/Neurologist/Neurologist'
 import Pediatrician from './Pages/Pediatrician/Pediatrician'
 import Gynaecologist from './Pages/Gynaecologist/Gynaecologist'
 import Ayurveda from './Pages/Ayurveda/Ayurveda'
+import Appointments from './Pages/Appointments/Appointments';
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
           <Route
             exact path="/cardiologist" element={<Cardiologist />}
           />
-           <Route
+          <Route
             exact path="/dermatologist" element={<Dermatologist />}
           />
           <Route
@@ -58,6 +59,9 @@ function App() {
           />
           <Route
             exact path="/ayurveda" element={<Ayurveda />}
+          />         
+          <Route
+            exact path="/appointments" element={<Appointments />}
           />
 
         </Routes>
