@@ -35,10 +35,13 @@ const HomeCards = () => {
     { title: 'Care for your skin', img: 'https://i.ibb.co/LNyBdsr/Skin-care.png', path: '/dermatologist' },
     { title: 'Care for your stomach', img: 'https://i.ibb.co/fvXP01B/Stomach-care.png', path: '/stomach' },
     { title: 'Care for your kidney', img: 'https://i.ibb.co/Lr7Pc9f/Kidney-care.png', path: '/kidney' },
-    { title: 'Having issues with your nervous system?', img: 'https://i.ibb.co/wQQYVQv/nervous-system-care.png', path: '/neurologist' },
+    { title: 'Having problems in your head?', img: 'https://i.ibb.co/wQQYVQv/nervous-system-care.png', path: '/neurologist' },
     { title: 'Child having some health issues?', img: 'https://i.ibb.co/xJnLZHp/pediatrics.png', path: '/pediatrician' },
     { title: 'Ladies problem?', img: 'https://i.ibb.co/LnJbCk4/gynaecologist.png', path: '/gynaecologist' },
-    { title: 'Want an Ayurvedic solution?', img: 'https://i.ibb.co/ZSfGWDD/Ayurveda.png', path: '/ayurveda' }
+    { title: 'Problem in your Eyes?', img: 'https://i.ibb.co/6FY6FDq/eyes.png', path: '/eyes' },
+    { title: 'Facing problems in your Ears, Nose or Throat?', img: 'https://i.ibb.co/YpMMYm3/ENT.png', path: '/ent' },
+    { title: 'Problem in your Bones or Muscles?', img: 'https://i.ibb.co/z7YRsKH/ortho.png', path: '/ortho' },
+    { title: 'Want an Ayurvedic solution?', img: 'https://i.ibb.co/ZSfGWDD/Ayurveda.png', path: '/ayurveda' },
   ];
 
   return (
