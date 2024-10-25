@@ -17,6 +17,7 @@ import Eyes from './Pages/Eyes/Eyes';
 import ENT from './Pages/ENT/ENT';
 import Ortho from './Pages/Ortho/Ortho';
 import Appointments from './Pages/Appointments/Appointments';
+import BookingDetails from './Pages/BookingDetails/BookingDetails'
 import About from './Pages/About/About'
 
 function App() {
@@ -80,6 +81,9 @@ function App() {
 
           <Route
             exact path="/appointments" element={<Appointments />}
+          />
+          <Route
+            exact path="/bookingdetails" element={<BookingDetails />}
           />
 
         </Routes>
