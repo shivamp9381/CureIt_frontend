@@ -1,123 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
 
 * {
-    box-sizing: border-box;
-    font-family: "Syne", sans-serif;
+  box-sizing: border-box;
+  font-family: "Syne", sans-serif;
 }
-  
+
 .footer {
-    background-color:#1b7f17dc;
-    color: white;
-    padding: 40px 0;
-    font-family: 'Courier New', Courier, monospace;
+  background-color: #1b7f17dc;
+  color: white;
+  padding: 40px 0;
 }
 
 .footerContainer {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footerSection {
-    flex: 1;
-    min-width: 150px;
-    margin: 10px;
+  flex: 1;
+  min-width: 150px;
+  margin: 10px;
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
 }
 
 .sectionTitle {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 li {
-    margin: 5px 0;
-    font-size: 14px;
+  margin: 5px 0;
+  font-size: 14px;
 }
 
 .footerBottom {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .copyright {
-    font-size: 14px;
-    margin-top: 20px;
-    color: white;
+  font-size: 14px;
+  margin-top: 20px;
+  color: white;
 }
 
 .footer_section {
-    width: 23%;
-    min-width: 250px;
-    margin-bottom: 20px;
-    margin-left: 3%;
+  width: 23%;
+  min-width: 250px;
+  margin-bottom: 20px;
+  margin-left: 3%;
 }
-.copyright{
-    padding-right: 0.7rem;
-}
-  
+
 .footer_section h3 {
-    color: #fff;
-    margin-bottom: 10px;
-    font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
-  
+
 .footer_section p,
 .footer_section a {
-    font-size: 14px;
-    color: #ccc;
-    text-decoration: none;
-    line-height: 1.8;
+  font-size: 14px;
+  color: #ccc;
+  text-decoration: none;
+  line-height: 1.8;
 }
-  
+
 .footer_section a:hover {
-    color: #fff;
+  color: #fff;
 }
 
 .complaint_form form {
-    width: 100%;
+  width: 100%;
 }
-  
+
 .complaint_form input[type="text"],
 .complaint_form input[type="email"],
 .complaint_form textarea {
-    padding: 12px;
-    width: 100%; /* Ensure full width */
-    border: none;
-    border-radius: 10px; 
-    margin-bottom: 15px;
-    background-color: #222;
-    color: #eee;
+  padding: 12px;
+  width: 100%; /* Ensure full width */
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background-color: #222;
+  color: #eee;
 }
-  
+
 .complaint_form button {
-    padding: 12px 20px;
-    width: 100%;
-    background-color: #0f6590dc; 
-    color: #fff;
-    border: none;
-    border-radius: 10px; 
-    cursor: pointer;
-    font-size: 16px;
+  padding: 12px 20px;
+  width: 100%;
+  background-color: #0f6590dc;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
 }
-  
+
 .complaint_form button:hover {
-    background-color: #0f6590dc;
+  background-color: #0f6590dc;
 }
-    
+
 .social_icons {
   margin-top: 20px;
 }
@@ -129,47 +125,48 @@ li {
 }
 
 .social_icons i:hover {
-  color: #392e2e;
+  color: #fff; /* Changed to white for better visibility */
 }
 
+/* Media Queries */
 
 @media (max-width: 850px) {
-    .footerContainer {
-        align-items: stretch; 
-    }
+  .footerContainer {
+    align-items: stretch;
+  }
 
-    .footerSection {
-        margin-bottom: 20px; 
-        flex: 0 1 calc(50% - 20px); 
-    }
-    
-    .footerSection:nth-child(2),
-    .footerSection:nth-child(3) {
-        order: 1; 
-    }
+  .footerSection {
+    margin-bottom: 20px;
+    flex: 0 1 calc(50% - 20px);
+  }
+
+  .footerSection:nth-child(2),
+  .footerSection:nth-child(3) {
+    order: 1;
+  }
 }
 
 /* Ensure full width for input and textarea on screens 315px and below */
 @media (max-width: 315px) {
-    .complaint_form input[type="text"],
-    .complaint_form input[type="email"],
-    .complaint_form textarea {
-        width: 100%; /* Full width */
-    }
+  .complaint_form input[type="text"],
+  .complaint_form input[type="email"],
+  .complaint_form textarea {
+    width: 100%; /* Full width */
+  }
 }
 
 @media (max-width: 500px) {
-    .footerContainer {
-        flex-direction: column; 
-        align-items: stretch; 
-    }
+  .footerContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-    .footerSection {
-        flex: 1 1 100%; 
-        margin-bottom: 20px; 
-    }
+  .footerSection {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
 
-    .footerBottom {
-        text-align: center;
-    }
+  .footerBottom {
+    text-align: center;
+  }
 }

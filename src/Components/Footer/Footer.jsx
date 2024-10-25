@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
-import styles from './Footer.module.css';
+import React, { useState } from "react";
+import styles from "./Footer.module.css";
 
 const Footer = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    issue: ''
+    name: "",
+    email: "",
+    issue: "",
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
-    alert('Issue submitted successfully!');
+    console.log("Form Data:", formData);
+    alert("Issue submitted successfully!");
 
     // Reset form data after submission
     setFormData({
-      name: '',
-      email: '',
-      issue: ''
+      name: "",
+      email: "",
+      issue: "",
     });
   };
 
@@ -108,17 +108,58 @@ const Footer = () => {
             onChange={handleChange}
             required
           />
-          <button className={styles.submitissues} type="submit">Submit</button>
+          <button className={styles.submitissues} type="submit">
+            Submit
+          </button>
         </form>
       </div>
       {/* Centered Copyright Section */}
       <div className={styles.footerBottom}>
         <p className={styles.copyright}>© Cureit 2024</p>
         <div className={`${styles.social_icons}`}>
-            <a href="https://Linkedin.com"><i className="fab fa-linkedin"></i></a>
-            <a href="https://instagram.com"><i className="fab fa-instagram"></i></a>
-            <a href="https://gmail.com"><i className="fas fa-envelope"></i></a>
-          </div>
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-facebook"></i>
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-youtube"></i>
+          </a>
+          <a
+            href="mailto:support@cureit.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fas fa-envelope"></i>
+          </a>
+        </div>
       </div>
     </footer>
   );

@@ -26,13 +26,13 @@ const sendOTP = async (email, otp) => {
     port: 587,
     secure: false,
     auth: {
-      user: "your-email@gmail.com",
-      pass: "your-email-password",
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASSWORD,
     },
   });
 
   const mailOptions = {
-    from: "your-email@gmail.com",
+    from: process.env.EMAIL_USER,
     to: email,
     subject: "OTP for Password Reset",
     text: `Your OTP is: ${otp}`,
@@ -60,12 +60,18 @@ app.post("/login", (req, res) => {
     return res.status(401).json({ error: "Invalid credentials" });
   }
 
-  const token = jwt.sign({ userId: user.id }, "secretkey", { expiresIn: "1h" });
+  const token = jwt.sign({ userId: user.id }, process.env.SECRET_KEY, {
+    expiresIn: "1h",
+  });
   res.json({ token, user });
 });
 
 app.post("/send-otp", async (req, res) => {
   const { phoneNumber } = req.body;
+  if (!phoneNumber) {
+    return res.status(400).json({ error: "Phone number is required" });
+  }
+
   const otp = generateOTP();
   console.log(`OTP for ${phoneNumber}: ${otp}`);
   await sendOTP(phoneNumber, otp);
@@ -74,9 +80,9 @@ app.post("/send-otp", async (req, res) => {
 
 app.post("/reset-password", async (req, res) => {
   const { phoneNumber, otp, newPassword } = req.body;
-  console.log(
-    `Reset password for ${phoneNumber} with OTP ${otp} and new password ${newPassword}`
-  );
+  if (!phoneNumber || !otp || !newPassword) {
+    return res.status(400).json({ error: "All fields are required" });
+  }
 
   const user = users.find((user) => user.email === phoneNumber);
   if (user) {
