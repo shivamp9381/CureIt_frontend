@@ -5,7 +5,9 @@
     border-style:2px solid #f9f9f9;
     transform: -5px;
 }
-
+.detail{
+    color: black;
+}
 .doctorImage {
     width: 200px;
     height: 200px;

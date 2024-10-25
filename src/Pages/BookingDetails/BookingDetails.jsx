@@ -27,7 +27,7 @@ const BookingDetails = () => {
         <>
         <Navbar/>
         <div className={styles.bookingDetails}>
-            <h2>Booking Details</h2>
+            <h2 className={styles.detail}>Booking Details</h2>
             <img src={doctor.image} alt={doctor.name} className={styles.doctorImage} />
             <h3 className={styles.name}>{doctor.name}</h3>
             <p>Speciality: {doctor.speciality}</p>
