@@ -41,10 +41,10 @@ const Footer = () => {
           <h2 className={styles.sectionTitle}>Services</h2>
           <ul>
             <li>Book a doctor's appointment online</li>
-            <li>Book a test online (Coming soon...)</li>
-            <li>Buy medicine (Coming soon...)</li>
-            <li>Buy health insurance (Coming soon...)</li>
-            <li>Emergency (Coming soon...)</li>
+            <li>Book a test online </li>
+            <li>Buy medicine </li>
+            <li>Buy health insurance </li>
+            <li>Emergency </li>
           </ul>
         </div>
 
