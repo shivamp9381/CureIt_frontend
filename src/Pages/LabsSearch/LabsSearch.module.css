@@ -8,7 +8,10 @@
     background-position: center;
     opacity: 0.5; /* Makes the background image a bit transparent */
 }
-
+.searchButton{
+    background-color: transparent;
+    border-color: transparent;
+}
 .inputLabsContainer {
     display: flex;
     align-items: center;

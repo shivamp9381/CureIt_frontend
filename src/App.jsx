@@ -20,6 +20,7 @@ import Appointments from './Pages/Appointments/Appointments';
 import BookingDetails from './Pages/BookingDetails/BookingDetails'
 import About from './Pages/About/About'
 import LabsSearch from './Pages/LabsSearch/LabsSearch'
+import Labs from './Pages/Labs/Labs'
 
 function App() {
   return (
@@ -88,6 +89,9 @@ function App() {
           />
           <Route
             exact path="/labssearch" element={<LabsSearch />}
+          />
+          <Route
+            exact path="/labs" element={<Labs />}
           />
 
         </Routes>

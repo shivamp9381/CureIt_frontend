@@ -15,6 +15,11 @@ const Neurologist = () => {
     navigate('/appointments?speciality=Neuro');
   };
 
+  const handleBookLabTest = () => {
+    navigate('/labssearch');
+  };
+
+
   return (
     <>
     <Navbar/>
@@ -24,7 +29,7 @@ const Neurologist = () => {
         <DoctorIcon className={styles.icon} /> {/* Use SVG component */}
         <h3 className={styles.title}>Book your appointment with a neurologist</h3>
       </div>
-      <div className={styles.item}>
+      <div className={styles.item} onClick={handleBookLabTest}>
         <LabTestIcon className={styles.icon} />
         <h3 className={styles.title}>Book Lab tests at home</h3>
       </div>
