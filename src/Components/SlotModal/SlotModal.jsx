@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DateSlider from '../DateSlider/DateSlider';
 import styles from './SlotModal.module.css';
 
 const SlotModal = ({ isOpen, onClose, doctor }) => {
     const navigate = useNavigate();
-    const [selectedDate, setSelectedDate] = React.useState(0);
+    const [selectedDate, setSelectedDate] = useState(0);
+    const [showForm, setShowForm] = useState(false); // Toggle for form visibility
+    const [patientName, setPatientName] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [error, setError] = useState(''); // State for error message
 
     const dates = [
         { label: 'Today', slots: doctor?.slots || [] },
@@ -14,14 +18,27 @@ const SlotModal = ({ isOpen, onClose, doctor }) => {
     ];
 
     const handleSlotClick = (slot) => {
-        navigate('/bookingdetails', { 
-            state: { 
-                doctor, 
-                date: dates[selectedDate].label, 
-                time: slot 
-            } 
+        setShowForm(true); // Show form when a slot is selected
+        setError(''); // Clear error when selecting a slot
+    };
+
+    const handleFormSubmit = () => {
+        if (!patientName || !phoneNumber) {
+            setError('Please enter both name and phone number.');
+            return;
+        }
+
+        // Redirect to BookingDetails with patient details
+        navigate('/bookingdetails', {
+            state: {
+                doctor,
+                date: dates[selectedDate].label,
+                time: dates[selectedDate].slots[0], // Pass selected slot
+                patientName,
+                phoneNumber,
+            }
         });
-        onClose(); // Close the modal after navigating
+        onClose(); // Close the modal
     };
 
     if (!isOpen) return null;
@@ -30,28 +47,45 @@ const SlotModal = ({ isOpen, onClose, doctor }) => {
         <div className={styles.modalOverlay}>
             <div className={styles.modal}>
                 <h2>Select a Date</h2>
-                <DateSlider 
-                    dates={dates} 
-                    selectedDate={selectedDate} 
-                    onSelectDate={setSelectedDate} 
-                />
+                <DateSlider dates={dates} selectedDate={selectedDate} onSelectDate={setSelectedDate} />
 
-                <h3>Select a Slot</h3>
-                <div className={styles.slots}>
-                    {dates[selectedDate]?.slots.map((slot, index) => (
-                        <button 
-                            key={index} 
-                            className={styles.slotButton} 
-                            onClick={() => handleSlotClick(slot)}
-                        >
-                            {slot}
+                {!showForm ? (
+                    <>
+                        <h3>Select a Slot</h3>
+                        <div className={styles.slots}>
+                            {dates[selectedDate]?.slots.map((slot, index) => (
+                                <button key={index} className={styles.slotButton} onClick={() => handleSlotClick(slot)}>
+                                    {slot}
+                                </button>
+                            ))}
+                        </div>
+                    </>
+                ) : (
+                    // Patient Form for Name and Phone
+                    <div className={styles.formContainer}>
+                        <h3>Enter Patient Details</h3>
+                        {error && <p className={styles.error}>{error}</p>} {/* Error message */}
+                        <input
+                            type="text"
+                            placeholder="Enter Name"
+                            value={patientName}
+                            onChange={(e) => setPatientName(e.target.value)}
+                            className={styles.formInput}
+                        />
+                        <input
+                            type="tel"
+                            placeholder="Enter Phone Number"
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                            className={styles.formInput}
+                        />
+                        <button onClick={handleFormSubmit} className={styles.submitButton}>
+                            Confirm
                         </button>
-                    ))}
-                </div>
+                    </div>
+                )}
 
-                <button className={styles.closeButton} onClick={onClose}>
-                    Close
-                </button>
+                <button className={styles.closeButton} onClick={onClose}>Close</button>
             </div>
         </div>
     );

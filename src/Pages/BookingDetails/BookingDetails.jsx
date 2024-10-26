@@ -8,15 +8,14 @@ import Footer from '../../Components/Footer/Footer';
 const BookingDetails = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const { doctor, date, time } = location.state || {};
+    const { doctor, date, time, patientName, phoneNumber } = location.state || {};
 
     const handleConfirmBooking = () => {
-        // Leave this empty for backend implementation later
         alert(`Booking confirmed.`);
     };
 
     const handleCancel = () => {
-        navigate('/'); // Redirect back to the home page or another page
+        navigate('/');
     };
 
     if (!doctor) {
@@ -25,21 +24,33 @@ const BookingDetails = () => {
 
     return (
         <>
-        <Navbar/>
-        <div className={styles.bookingDetails}>
-            <h2 className={styles.detail}>Booking Details</h2>
-            <img src={doctor.image} alt={doctor.name} className={styles.doctorImage} />
-            <h3 className={styles.name}>{doctor.name}</h3>
-            <p>Speciality: {doctor.speciality}</p>
-            <p>Clinic: {doctor.clinic}</p>
-            <p>Date: {date}</p>
-            <p>Time: {time}</p>
-            <button onClick={handleConfirmBooking} className={styles.confirmButton}>Confirm Booking</button>
-            <button onClick={handleCancel} className={styles.cancelButton}>Cancel</button>
-        </div>
-
-        <BottomBanner/>
-        <Footer/>
+            <Navbar />
+            <div className={styles.bookingDetails}>
+                <div className={styles.header}>
+                    <h2>Confirm Your Appointment</h2>
+                    <p>Your wellness journey starts here. Review your booking details below.</p>
+                </div>
+                <div className={styles.detailsContainer}>
+                    <div className={styles.doctorInfo}>
+                        <img src={doctor.image} alt={doctor.name} className={styles.doctorImage} />
+                        <h3>{doctor.name}</h3>
+                        <p>{doctor.speciality} - {doctor.clinic}</p>
+                    </div>
+                    <div className={styles.bookingInfo}>
+                        <h4>Appointment Details</h4>
+                        <p><strong>Date:</strong> {date}</p>
+                        <p><strong>Time:</strong> {time}</p>
+                        {patientName && <p><strong>Patient Name:</strong> {patientName}</p>}
+                        {phoneNumber && <p><strong>Phone Number:</strong> {phoneNumber}</p>}
+                    </div>
+                </div>
+                <div className={styles.actions}>
+                    <button onClick={handleConfirmBooking} className={styles.confirmButton}>Confirm Booking</button>
+                    <button onClick={handleCancel} className={styles.cancelButton}>Cancel</button>
+                </div>
+            </div>
+            <BottomBanner />
+            <Footer />
         </>
     );
 };

@@ -1,9 +1,9 @@
-
+/* 
    .banner {
     display: flex;
     justify-content: space-around;
     padding: 20px;
-    background-color: #f9f9f9; /* No change to the background color */
+    background-color: #f9f9f9; 
     flex-wrap: wrap;
 }
 
@@ -46,7 +46,6 @@ p {
   fill: green;     
 }
 
-/* Responsive Adjustments */
 @media (max-width: 1024px) {
     .item {
       width: 45%;
@@ -93,4 +92,127 @@ p {
     p {
       font-size: 0.8rem;
     }
+} */
+
+
+
+.banner {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 1.5rem;
+  background-color: #eff6fc; /* Soft blue background to resonate with healthcare theme */
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  transition: background-color 0.3s ease;
+}
+
+.item {
+  width: 30%;
+  max-width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background-color: #e6f3f8; /* Light hover background */
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  fill: #0f6590dc; /* Match primary color */
+  transition: fill 0.3s ease;
+}
+
+.item:hover .icon {
+  fill: #088a03dc; /* Icon color change on hover */
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0f6590dc; /* Dark blue text to resonate with the healthcare theme */
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.item:hover .title {
+  color: #088a03dc; /* Highlighted color on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .item {
+    width: 45%;
+    padding: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+  }
+
+  .item {
+    width: 80%;
+    margin-bottom: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .item {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
 }
