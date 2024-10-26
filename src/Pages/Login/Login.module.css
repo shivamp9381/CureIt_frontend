@@ -1,4 +1,4 @@
-.loginContainer {
+/* .loginContainer {
     display: flex;
     width: 100%;
     height: 100vh;
@@ -146,4 +146,204 @@
       width: 100%;
     }
   }
+ */
 
+
+
+/* Login Page Container */
+.loginContainer {
+  display: flex;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Left Slider Container */
+.leftContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0f7fa;
+  padding: 20px;
+  height: 100%; /* Match height with rightContainer */
+}
+
+/* Slider Styling */
+.slider {
+  text-align: center;
+  color: #0f6590;
+  height: 80%; /* Optional: ensure the content is centered within the container */
+}
+
+.sliderImage {
+  width: 90%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.sliderImage:hover {
+  transform: scale(1.05);
+}
+
+.sliderText {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1b8dd3;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Right Login Form Container */
+.rightContainer {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  height: 100%; /* Match height with leftContainer */
+  max-width: 500px;
+  margin: auto;
+}
+
+.rightContainer h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #0f6590;
+}
+
+.slider p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.rightContainer p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+
+.inputField {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.inputField:focus {
+  border-color: #1b8dd3;
+  box-shadow: 0 0 8px rgba(27, 141, 211, 0.2);
+}
+
+.loginButton {
+  width: 100%;
+  padding: 14px;
+  background-color: #1b8dd3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.1s;
+}
+
+.loginButton:hover {
+  background-color: #0e77b8;
+}
+
+.loginButton:active {
+  transform: scale(0.98);
+}
+
+.signupPrompt {
+  margin-top: 15px;
+  color: #666;
+}
+
+.signupLink {
+  color: #1b8dd3;
+  text-decoration: none;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}
+
+.termsLink, .privacyLink {
+  color: #666;
+  text-decoration: none;
+}
+
+.termsLink:hover, .privacyLink:hover {
+  text-decoration: underline;
+}
+
+.forgotPassword {
+  color: #1b8dd3;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+/* OTP Button */
+.otp {
+  width: 100px;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  background-color: #1b8dd3;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.otp:hover {
+  background-color: #0b78bd;
+}
+
+.ph {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.reset {
+  width: 140px;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+  background-color: #1b8dd3;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset:hover {
+  background-color: #0b78bd;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .leftContainer {
+      display: none;
+  }
+
+  .rightContainer {
+      width: 100%;
+      border-radius: 0;
+  }
+
+  .sliderText {
+      font-size: 1rem;
+  }
+}
