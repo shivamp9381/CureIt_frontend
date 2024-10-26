@@ -23,7 +23,7 @@ const Ayurveda = () => {
       <div className={styles.banner}>
         <div className={styles.item} onClick={handleBookAppointment}>
           <DoctorIcon className={styles.icon} />
-          <h3 className={styles.title}>Book your appointment with a doctor</h3>
+          <h3 className={styles.title}>Book your appointment with an ayurveda doctor</h3>
         </div>
         <div className={styles.item}>
           <MedicineIcon className={styles.icon} />
