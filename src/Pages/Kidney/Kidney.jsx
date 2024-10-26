@@ -24,7 +24,7 @@ const Kidney = () => {
   return (
     <>
     <Navbar/>
-    <div className={styles.head}><h1> Having Kidney Problems?</h1></div>
+    <div className={styles.head}><h1>Kidney Troubles? Expert Solutions Await!</h1></div>
 
     <div className={styles.banner}>
       <div className={styles.item} onClick={handleBookAppointment}>

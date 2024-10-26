@@ -2,34 +2,35 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 1px solid #ddd;
-    /* Keep the original light grey border */
+    border: 1px solid #e0e0e0;
     padding: 20px;
     margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    /* Original white background */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 128, 128, 0.1); 
+    background-color: #f3f8fb; 
     width: 100%;
     max-width: 600px;
-    height: 40%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.appointmentCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 128, 128, 0.3); 
 }
 
 .doctorInfo {
     display: flex;
-    /* Ensure doctor info is displayed in a row */
     align-items: center;
     width: 100%;
-    /* Make sure it uses full width */
 }
 
 .doctorImage {
     width: 50%;
-    /* Adjust as needed */
     height: auto;
+    object-fit: cover;
     border-radius: 50%;
-    margin-right: 20px;
-    /* Space between image and text */
+    margin-right: 50px;
+    border: 3px solid #0f6590; 
 }
 
 .ratingStories {
@@ -37,60 +38,33 @@
 }
 
 .rating {
-    color: green;
-    /* Original green for ratings */
+    color: #0f6590; 
     font-weight: bold;
 }
 
 .availableStatus {
-    color: green;
-    /* Original green for availability */
+    color: #088a03; 
     font-weight: bold;
+    margin-top: 5px;
 }
 
-.bookBtn {
-    background-color: #0f6590dc;
-    /* Original blue for button */
-    color: white;
-    margin-top: 2rem;
-    padding: 10px 20px;
-    width: 50%;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    align-self: flex-end;
-    /* Align button to the right */
-}
-
+.bookBtn,
 .docProfile {
-    background-color: #0f6590dc;
-    /* Original blue for button */
+    background-color: #0f6590;
     color: white;
-    margin-top: 2rem;
-    padding: 10px 20px;
-    width: 50%;
+    margin-top: 1rem;
+    padding: 12px 24px;
+    width: calc(50% - 10px);
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    align-self: flex-end;
-    /* Align button to the right */
+    margin-right: 10px;
+    text-align: center;
 }
 
-
-.bookBtn:hover {
-    background-color: #088a03dc;
-    transform: translateY(-2px);
-}
-
+.bookBtn:hover,
 .docProfile:hover {
-    background-color: #088a03dc;
+    background-color: #088a03; 
     transform: translateY(-2px);
-}
-
-.appointmentCard:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
-    background-color: rgb(176, 176, 176);
-
 }

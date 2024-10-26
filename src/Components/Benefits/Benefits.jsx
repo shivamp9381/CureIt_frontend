@@ -112,7 +112,7 @@ const Benefits = () => {
               stroke-linejoin="round"
             />
           </svg>{" "}
-          <p>95% patient satisfaction</p>
+          <p>Patient satisfaction</p>
         </li>
         <li className={styles.text}>
           <svg

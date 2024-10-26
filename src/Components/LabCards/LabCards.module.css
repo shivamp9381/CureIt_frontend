@@ -1,15 +1,13 @@
-.labCard {
+/* .labCard {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     border: 1px solid #ddd;
-    /* Keep the original light grey border */
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    /* Original white background */
     width: 100%;
     max-width: 600px;
     height: 40%;
@@ -17,19 +15,15 @@
 
 .labInfo {
     display: flex;
-    /* Ensure doctor info is displayed in a row */
     align-items: center;
     width: 100%;
-    /* Make sure it uses full width */
 }
 
 .labImage {
     width: 50%;
-    /* Adjust as needed */
     height: auto;
     border-radius: 40%;
     margin-right: 20px;
-    /* Space between image and text */
 }
 
 .labratingStories {
@@ -38,13 +32,11 @@
 
 .labrating {
     color: green;
-    /* Original green for ratings */
     font-weight: bold;
 }
 
 .labbookBtn {
     background-color: #0f6590dc;
-    /* Original blue for button */
     color: white;
     margin-top: 2rem;
     padding: 10px 20px;
@@ -54,7 +46,6 @@
     cursor: pointer;
     transition: all 0.3s ease;
     align-self: flex-end;
-    /* Align button to the right */
 }
 
 
@@ -64,13 +55,106 @@
     transform: translateY(-2px);
 }
 
-/* .docProfile:hover {
-    background-color: #088a03dc;
-    transform: translateY(-2px);
-} */
 
 .labCard:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
     background-color: rgb(176, 176, 176);
 
+} */
+
+
+.labCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    max-width: 100%;
+    width: 100%;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.labCard:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+    background-color: #f4f4f4;
+}
+
+.labInfo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.labImage {
+    width: 120px;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.labImage:hover {
+    transform: scale(1.05);
+}
+
+.labratingStories {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.labrating {
+    color: #28a745;
+    font-weight: bold;
+    background: #e8f5e9;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.labbookBtn {
+    background-color: #007bff;
+    color: #ffffff;
+    margin-top: 1.5rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-end;
+    width: fit-content;
+}
+
+.labbookBtn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .labCard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .labInfo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .labImage {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 15px;
+    }
+
+    .labbookBtn {
+        width: 100%;
+        align-self: center;
+    }
 }

@@ -21,6 +21,7 @@ import BookingDetails from './Pages/BookingDetails/BookingDetails'
 import About from './Pages/About/About'
 import LabsSearch from './Pages/LabsSearch/LabsSearch'
 import Labs from './Pages/Labs/Labs'
+import LabBookingDetails from './Pages/LabBookingDetails/LabBookingDetails';
 
 function App() {
   return (
@@ -92,6 +93,9 @@ function App() {
           />
           <Route
             exact path="/labs" element={<Labs />}
+          />
+          <Route
+            exact path="/labbookingdetails" element={<LabBookingDetails />}
           />
 
         </Routes>

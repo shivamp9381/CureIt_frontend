@@ -22,7 +22,7 @@ const Eyes = () => {
   return (
     <>
     <Navbar/>
-    <div className={styles.head}><h1> Need  a Opthalmologist? </h1></div>
+    <div className={styles.head}><h1>Precision Eye Care: See Better, Live Better</h1></div>
     <div className={styles.banner}>
       <div className={styles.item} onClick={handleBookAppointment}>
         <DoctorIcon className={styles.icon} /> {/* Use SVG component */}
