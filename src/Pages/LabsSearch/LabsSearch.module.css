@@ -1,0 +1,62 @@
+.searchLabsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Center vertically */
+    background-image: url("https://i.ibb.co/LSRkDjv/cureit-logo.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Makes the background image a bit transparent */
+}
+
+.inputLabsContainer {
+    display: flex;
+    align-items: center;
+    border: 2px solid #181818; /* Border around the input */
+    border-radius: 25px; /* Rounded corners */
+    padding: 5px; /* Padding inside the border */
+    background-color: white; /* White background for the input */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+    width: 80%; /* Make it responsive */
+    max-width: 600px; /* Limit the max width */
+}
+
+.searchLabs {
+    border: none; /* Remove default input border */
+    outline: none; /* Remove outline on focus */
+    padding: 10px 15px; /* Padding for input */
+    font-size: 16px; /* Font size for input */
+    border-radius: 25px; /* Match border-radius */
+    flex-grow: 1; /* Take up available space */
+}
+
+.searchLabs:focus {
+    box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.5); /* Shadow on focus */
+}
+
+.searchIconLabs {
+    margin-left: 35px; /* Position the icon next to the input */
+    color: #007bff; /* Icon color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: color 0.3s; /* Smooth color transition */
+    background-color: transparent;
+}
+
+.searchIconLabs:hover {
+    color: #004c9d; /* Darker color on hover */
+}
+
+.inputLabsContainer:hover {
+    border-color: #0056b3; /* Change border color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .searchLabs {
+        font-size: 14px; /* Smaller font size for smaller screens */
+    }
+    
+    .inputLabsContainer {
+        width: 90%; /* More width on smaller screens */
+    }
+}
