@@ -25,7 +25,7 @@ const Dermatologist = () => {
 
     <>
     <Navbar/>
-    <div className={styles.head}><h1>Skin Problems ?</h1></div>
+    <div className={styles.head}><h1>From Acne to Glow: Find Your Skin Solutions Here</h1></div>
     <div className={styles.banner}>
       <div className={styles.item} onClick={handleBookAppointment}>
         <DoctorIcon className={styles.icon} /> {/* Use SVG component */}

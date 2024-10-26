@@ -23,7 +23,7 @@ const Neurologist = () => {
   return (
     <>
     <Navbar/>
-    <div className={styles.head}><h1>Having trouble in your head?</h1></div>
+    <div className={styles.head}><h1>Head in a Spin? Let's Set Things Straight.</h1></div>
     <div className={styles.banner}>
       <div className={styles.item} onClick={handleBookAppointment}>
         <DoctorIcon className={styles.icon} /> {/* Use SVG component */}

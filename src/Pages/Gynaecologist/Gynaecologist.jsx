@@ -21,7 +21,7 @@ const Gynaecologist = () => {
   return (
     <>
     <Navbar/>
-    <div className={styles.head}><h1> Need  a Gynaecologist? </h1></div>
+    <div className={styles.head}><h1>Your Health, Your Comfort: Find the Right Gynaecologist Today</h1></div>
     <div className={styles.banner}>
       <div className={styles.item} onClick={handleBookAppointment}>
         <DoctorIcon className={styles.icon} /> {/* Use SVG component */}

@@ -22,7 +22,7 @@ const Ortho = () => {
   return (
     <>
     <Navbar/>
-    <div className={styles.head}><h1> Need  an Orthologist? </h1></div>
+    <div className={styles.head}><h1>Revitalize Your Health with Tailored Ayurvedic Solutions</h1></div>
     <div className={styles.banner}>
       <div className={styles.item} onClick={handleBookAppointment}>
         <DoctorIcon className={styles.icon} /> {/* Use SVG component */}

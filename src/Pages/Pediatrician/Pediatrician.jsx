@@ -23,7 +23,7 @@ const Pediatrician = () => {
   return (
     <>
     <Navbar/>
-    <div className={styles.head}><h1>Is your Kid Sick?</h1></div>
+    <div className={styles.head}><h1>Is Your Child Feeling Unwell? We're Here to Help!</h1></div>
     <div className={styles.banner}>
       <div className={styles.item}  onClick={handleBookAppointment}>
         <DoctorIcon className={styles.icon} /> {/* Use SVG component */}

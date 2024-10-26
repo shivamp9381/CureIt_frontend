@@ -25,7 +25,7 @@ const Cardiologist = () => {
   
     <>
     <Navbar/>
-    <div className={styles.head}><h1>Facing Heart Problems?</h1></div>
+    <div className={styles.head}><h1>Heart Troubles? Let's Mend It Together!</h1></div>
 
     <div className={styles.banner}>
       <div className={styles.item} onClick={handleBookAppointment}>
