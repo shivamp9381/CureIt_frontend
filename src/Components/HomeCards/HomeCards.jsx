@@ -37,7 +37,7 @@ const HomeCards = () => {
     { title: 'Care for your kidney', img: 'https://i.ibb.co/Lr7Pc9f/Kidney-care.png', path: '/kidney' },
     { title: 'Having problems in your head?', img: 'https://i.ibb.co/wQQYVQv/nervous-system-care.png', path: '/neurologist' },
     { title: 'Child having some health issues?', img: 'https://i.ibb.co/xJnLZHp/pediatrics.png', path: '/pediatrician' },
-    { title: 'Ladies problem?', img: 'https://i.ibb.co/LnJbCk4/gynaecologist.png', path: '/gynaecologist' },
+    { title: 'Need a Gyanaec ?', img: 'https://i.ibb.co/LnJbCk4/gynaecologist.png', path: '/gynaecologist' },
     { title: 'Problem in your Eyes?', img: 'https://i.ibb.co/6FY6FDq/eyes.png', path: '/eyes' },
     { title: 'Facing problems in your Ears, Nose or Throat?', img: 'https://i.ibb.co/YpMMYm3/ENT.png', path: '/ent' },
     { title: 'Problem in your Bones or Muscles?', img: 'https://i.ibb.co/z7YRsKH/ortho.png', path: '/ortho' },
