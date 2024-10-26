@@ -39,7 +39,7 @@ Founded with the vision to revolutionize the way healthcare services are deliver
 
       {/* Mission Statement Section */}
       <section className={style.missionStatement}>
-        <h2>We're not just anouther pharma company!.</h2>
+        <h2 className={style.tag}>We're not just another pharma company!.</h2>
         <p>
         Our platform is designed to provide you with instant access to healthcare professionals, emergency support, and other critical medical services—all at your fingertips. Whether you need to consult with a doctor, book diagnostic tests, or get health insurance, we ensure you receive timely and reliable care, anytime, anywhere.
         </p>

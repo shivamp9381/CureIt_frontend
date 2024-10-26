@@ -125,7 +125,7 @@ const Navbar = () => {
             <Link to="/appointments" onClick={handleDropdownItemClick}>
               <div>Book a doctor's appointment</div>
             </Link>
-            <Link to="/book-test" onClick={handleDropdownItemClick}>
+            <Link to="/labssearch" onClick={handleDropdownItemClick}>
               <div>Book a test online</div>
             </Link>
             <Link to="/buy-medicine" onClick={handleDropdownItemClick}>
@@ -160,7 +160,7 @@ const Navbar = () => {
             <Link to="/appointments" onClick={handleDropdownItemClick}>
               <div>Book a doctor's appointment</div>
             </Link>
-            <Link to="/book-test" onClick={handleDropdownItemClick}>
+            <Link to="/labssearch" onClick={handleDropdownItemClick}>
               <div>Book a test online</div>
             </Link>
             <Link to="/buy-medicine" onClick={handleDropdownItemClick}>

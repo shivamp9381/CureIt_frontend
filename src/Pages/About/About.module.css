@@ -84,7 +84,7 @@ body {
     color: white;
   }
   
-  .missionStatement h2 {
+  .missionStatement .tag {
     font-size: 2rem;
     font-family: 'Syne', sans-serif;
   }
@@ -157,7 +157,7 @@ body {
     height: auto;
   }
   
-  h2 {
+  .tag {
     font-family: 'Syne', sans-serif;
     color: #d7ff00; /* Accent color matching your theme */
     margin-bottom: 1rem;
