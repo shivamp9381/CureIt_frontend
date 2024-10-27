@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import React from 'react';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
@@ -19,7 +19,9 @@ import Ortho from './Pages/Ortho/Ortho';
 import Appointments from './Pages/Appointments/Appointments';
 import BookingDetails from './Pages/BookingDetails/BookingDetails'
 import About from './Pages/About/About'
-import DoctorDetails from './Pages/DoctorDetails/DoctorDetails';
+import LabsSearch from './Pages/LabsSearch/LabsSearch'
+import Labs from './Pages/Labs/Labs'
+import LabBookingDetails from './Pages/LabBookingDetails/LabBookingDetails';
 
 function App() {
   return (
@@ -52,7 +54,6 @@ function App() {
           <Route
             exact path="/dermatologist" element={<Dermatologist />}
           />
-          <Route path="/doctordetails" element={<DoctorDetails />} />
           <Route
             exact path="/stomach" element={<Stomach />}
           />
@@ -86,6 +87,15 @@ function App() {
           />
           <Route
             exact path="/bookingdetails" element={<BookingDetails />}
+          />
+          <Route
+            exact path="/labssearch" element={<LabsSearch />}
+          />
+          <Route
+            exact path="/labs" element={<Labs />}
+          />
+          <Route
+            exact path="/labbookingdetails" element={<LabBookingDetails />}
           />
 
         </Routes>
