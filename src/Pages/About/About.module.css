@@ -90,9 +90,9 @@ body {
   }
   
   .missionStatement p {
+    text-align: center;
     font-size: 1.1rem;
     color: #bab9b9;
-    margin: 1rem 0;
   }
   
   /* Stats Section */
