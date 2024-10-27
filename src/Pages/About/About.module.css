@@ -84,15 +84,15 @@ body {
     color: white;
   }
   
-  .missionStatement h2 {
+  .missionStatement .tag {
     font-size: 2rem;
     font-family: 'Syne', sans-serif;
   }
   
   .missionStatement p {
+    text-align: center;
     font-size: 1.1rem;
     color: #bab9b9;
-    margin: 1rem 0;
   }
   
   /* Stats Section */
@@ -157,7 +157,7 @@ body {
     height: auto;
   }
   
-  h2 {
+  .missionStatement h2{
     font-family: 'Syne', sans-serif;
     color: #d7ff00; /* Accent color matching your theme */
     margin-bottom: 1rem;

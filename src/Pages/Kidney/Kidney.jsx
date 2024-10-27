@@ -15,18 +15,23 @@ const Kidney = () => {
     navigate('/appointments?speciality=Nephro');
   };
 
+  const handleBookLabTest = () => {
+    navigate('/labssearch');
+  };
+
+
 
   return (
     <>
     <Navbar/>
-    <div className={styles.head}><h1> Having Kidney Problems?</h1></div>
+    <div className={styles.head}><h1>Kidney Troubles? Expert Solutions Await!</h1></div>
 
     <div className={styles.banner}>
       <div className={styles.item} onClick={handleBookAppointment}>
         <DoctorIcon className={styles.icon} /> {/* Use SVG component */}
-        <h3 className={styles.title}>Book your appointment with a physician</h3>
+        <h3 className={styles.title}>Book your appointment with a nephrologist</h3>
       </div>
-      <div className={styles.item}>
+      <div className={styles.item} onClick={handleBookLabTest}>
         <LabTestIcon className={styles.icon} />
         <h3 className={styles.title}>Book Lab tests at home</h3>
       </div>

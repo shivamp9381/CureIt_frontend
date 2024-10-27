@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import DateSlider from '../DateSlider/DateSlider';
-import styles from './SlotModal.module.css';
+import DateSlider from '../DateSlider/DateSlider'; // Assuming this component exists
+import styles from './LabSlotModal.module.css';
 
-const SlotModal = ({ isOpen, onClose, doctor }) => {
+const LabSlotModal = ({ isOpen, onClose, lab }) => {
     const navigate = useNavigate();
     const [selectedDate, setSelectedDate] = useState(0);
-    const [showForm, setShowForm] = useState(false); // Toggle for form visibility
+    const [showForm, setShowForm] = useState(false);
     const [patientName, setPatientName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [error, setError] = useState(''); // State for error message
+    const [error, setError] = useState('');
 
     const dates = [
-        { label: 'Today', slots: doctor?.slots || [] },
-        { label: 'Tomorrow', slots: ['9:00 AM', '10:30 AM', '1:00 PM'] },
-        { label: 'Sun, 27 Oct', slots: ['9:00 AM', '2:30 PM', '5:00 PM'] },
+        { label: 'Today', slots: lab?.slots || [] },
+        { label: 'Tomorrow', slots: ['8:00 AM - 9:00 AM', '9:00 - 10:00 AM', '10:00 AM - 11:00 AM', '11:00 AM - 12:00 PM', '12:00 PM - 1:00 PM', '1:00 PM - 2:00 PM', '2:00 PM - 3:00 PM',  '3:00 PM - 4:00 PM',  '4:00 PM - 5:00 PM'] },
+        { label: 'Sun, 27 Oct', slots: ['8:00 AM - 9:00 AM', '9:00 - 10:00 AM', '10:00 AM - 11:00 AM', '11:00 AM - 12:00 PM', '12:00 PM - 1:00 PM', '1:00 PM - 2:00 PM', '2:00 PM - 3:00 PM',  '3:00 PM - 4:00 PM',  '4:00 PM - 5:00 PM'] },
     ];
 
     const handleSlotClick = (slot) => {
-        setShowForm(true); // Show form when a slot is selected
-        setError(''); // Clear error when selecting a slot
+        setShowForm(true);
+        setError('');
     };
 
     const handleFormSubmit = () => {
@@ -28,17 +28,16 @@ const SlotModal = ({ isOpen, onClose, doctor }) => {
             return;
         }
 
-        // Redirect to BookingDetails with patient details
-        navigate('/bookingdetails', {
+        navigate('/labbookingdetails', {
             state: {
-                doctor,
+                lab,
                 date: dates[selectedDate].label,
                 time: dates[selectedDate].slots[0], // Pass selected slot
                 patientName,
                 phoneNumber,
             }
         });
-        onClose(); // Close the modal
+        onClose();
     };
 
     if (!isOpen) return null;
@@ -61,10 +60,9 @@ const SlotModal = ({ isOpen, onClose, doctor }) => {
                         </div>
                     </>
                 ) : (
-                    // Patient Form for Name and Phone
                     <div className={styles.formContainer}>
                         <h3>Enter Patient Details</h3>
-                        {error && <p className={styles.error}>{error}</p>} {/* Error message */}
+                        {error && <p className={styles.error}>{error}</p>}
                         <input
                             type="text"
                             placeholder="Enter Name"
@@ -91,4 +89,4 @@ const SlotModal = ({ isOpen, onClose, doctor }) => {
     );
 };
 
-export default SlotModal;
+export default LabSlotModal;

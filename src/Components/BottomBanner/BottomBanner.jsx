@@ -1,4 +1,3 @@
-
 import React from 'react';
 import styles from './BottomBanner.module.css';
 import { ReactComponent as ReliableIcon } from './reliable.svg'; // Import your SVGs

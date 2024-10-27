@@ -38,19 +38,19 @@
     color: #0f6590;
 }
 
-.doctorInfo {
+.labInfo {
     text-align: center;
     flex: 1;
 }
 
-.doctorImage {
+.labImage {
     width: 120px;
     height: 120px;
-    border-radius: 50%;
+    border-radius: 20px; /* Adjusted for lab image */
     border: 5px solid #088a03;
 }
 
-.doctorInfo h3 {
+.labInfo h3 {
     margin-top: 15px;
     font-size: 1.5rem;
     color: #0f6590;

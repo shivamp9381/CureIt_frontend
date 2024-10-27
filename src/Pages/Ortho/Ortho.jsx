@@ -15,16 +15,20 @@ const Ortho = () => {
     navigate('/appointments?speciality=Ortho');
   };
 
+  const handleBookLabTest = () => {
+    navigate('/labssearch');
+  };
+
   return (
     <>
     <Navbar/>
-    <div className={styles.head}><h1> Need  an Orthologist? </h1></div>
+    <div className={styles.head}><h1>Revitalize Your Health with Tailored Ayurvedic Solutions</h1></div>
     <div className={styles.banner}>
       <div className={styles.item} onClick={handleBookAppointment}>
         <DoctorIcon className={styles.icon} /> {/* Use SVG component */}
-        <h3 className={styles.title}>Book your appointment with a physician</h3>
+        <h3 className={styles.title}>Book your appointment with an orthologist</h3>
       </div>
-      <div className={styles.item}>
+      <div className={styles.item} onClick={handleBookLabTest}>
         <LabTestIcon className={styles.icon} />
         <h3 className={styles.title}>Book Lab tests at home</h3>
       </div>

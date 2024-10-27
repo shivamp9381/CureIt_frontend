@@ -1,24 +1,24 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import styles from './BookingDetails.module.css';
+import styles from './LabBookingDetails.module.css';
 import Navbar from '../../Components/Navbar/Navbar';
 import BottomBanner from '../../Components/BottomBanner/BottomBanner';
 import Footer from '../../Components/Footer/Footer';
 
-const BookingDetails = () => {
+const LabBookingDetails = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const { doctor, date, time, patientName, phoneNumber } = location.state || {};
+    const { lab, date, time, patientName, phoneNumber } = location.state || {};
 
     const handleConfirmBooking = () => {
-        alert(`Booking confirmed.`);
+        alert(`Booking confirmed for ${lab.name} at ${time} on ${date}.`);
     };
 
     const handleCancel = () => {
-        navigate('/');
+        navigate('/'); // Navigate to the home or labs page
     };
 
-    if (!doctor) {
+    if (!lab) {
         return <div>No booking details found.</div>;
     }
 
@@ -27,14 +27,14 @@ const BookingDetails = () => {
             <Navbar />
             <div className={styles.bookingDetails}>
                 <div className={styles.header}>
-                    <h2>Confirm Your Appointment</h2>
+                    <h2>Confirm Your Lab Appointment</h2>
                     <p>Your wellness journey starts here. Review your booking details below.</p>
                 </div>
                 <div className={styles.detailsContainer}>
-                    <div className={styles.doctorInfo}>
-                        <img src={doctor.image} alt={doctor.name} className={styles.doctorImage} />
-                        <h3>{doctor.name}</h3>
-                        <p>{doctor.speciality} - {doctor.clinic}</p>
+                    <div className={styles.labInfo}>
+                        <img src={lab.image} alt={lab.name} className={styles.labImage} />
+                        <h3>{lab.name}</h3>
+                        <p>{lab.test} - {lab.location}</p>
                     </div>
                     <div className={styles.bookingInfo}>
                         <h4>Appointment Details</h4>
@@ -55,4 +55,4 @@ const BookingDetails = () => {
     );
 };
 
-export default BookingDetails;
+export default LabBookingDetails;
