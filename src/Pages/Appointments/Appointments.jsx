@@ -4,7 +4,7 @@ import Navbar from '../../Components/Navbar/Navbar';
 import BottomBanner from '../../Components/BottomBanner/BottomBanner';
 import Footer from '../../Components/Footer/Footer';
 import AppointmentCard from '../../Components/AppointtmentCard/AppointmentCard';
-import SlotModal from '../../Components/SlotModal/SlotModal'; // Import the SlotModal component
+import SlotModal from '../../Components/SlotModal/SlotModal';
 import styles from './Appointments.module.css';
 
 const Appointments = () => {
@@ -116,9 +116,9 @@ const Appointments = () => {
         setFilteredAppointments(filtered);
     };
 
-    const handleBookClick = (doctor) => {
-        setSelectedDoctor(doctor); // Store the selected doctor details
-        setShowModal(true); // Show the modal when "Book Clinic Visit" is clicked
+    const handleBookClick = (appointment) => {
+        setSelectedDoctor(appointment); // Pass the whole appointment, including fee
+        setShowModal(true); // Show the modal
     };
 
     const closeModal = () => {
@@ -134,7 +134,6 @@ const Appointments = () => {
                 <p className={styles.headPara}>Ready to take charge of your health? Let us connect you with top-notch doctors right in your neighborhood!</p>
             </div>
 
-            {/* Search Filter Section */}
             <div className={styles.searchFilter}>
                 <input
                     type="text"
@@ -151,14 +150,13 @@ const Appointments = () => {
                 <button onClick={handleSearch}>Search</button>
             </div>
 
-            {/* Appointments Listing */}
             <div className={styles.appointmentsContainer}>
                 {filteredAppointments.length > 0 ? (
                     filteredAppointments.map((appointment, index) => (
                         <AppointmentCard
                             key={index}
                             {...appointment}
-                            onBookClick={() => handleBookClick(appointment.doctor)} // Pass doctor details to handleBookClick
+                            onBookClick={() => handleBookClick(appointment)} // Pass full appointment details
                         />
                     ))
                 ) : (
@@ -166,12 +164,12 @@ const Appointments = () => {
                 )}
             </div>
 
-            {/* Modal for Slot Selection */}
             {showModal && selectedDoctor && (
                 <SlotModal
                     isOpen={showModal}
                     onClose={closeModal}
-                    doctor={selectedDoctor} // Pass the selected doctor details to the SlotModal
+                    doctor={selectedDoctor.doctor} // Pass doctor details
+                    fee={selectedDoctor.fee} // Pass the consultation fee
                 />
             )}
 

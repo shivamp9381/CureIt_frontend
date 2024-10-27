@@ -8,19 +8,17 @@ import Footer from '../../Components/Footer/Footer';
 const BookingDetails = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const { doctor, date, time, patientName, phoneNumber } = location.state || {};
-
-    const handleConfirmBooking = () => {
-        alert(`Booking confirmed.`);
-    };
-
-    const handleCancel = () => {
-        navigate('/');
-    };
+    const { doctor, date, time, patientName, phoneNumber, fee } = location.state || {};
 
     if (!doctor) {
         return <div>No booking details found.</div>;
     }
+    const handleConfirmBooking = () => {
+        navigate('/payment', {
+            state: { doctor, date, time, patientName, phoneNumber, fee }
+        });
+    };
+    
 
     return (
         <>
@@ -42,11 +40,16 @@ const BookingDetails = () => {
                         <p><strong>Time:</strong> {time}</p>
                         {patientName && <p><strong>Patient Name:</strong> {patientName}</p>}
                         {phoneNumber && <p><strong>Phone Number:</strong> {phoneNumber}</p>}
+                        <p><strong>Consultation Fee:</strong> ₹{fee}</p> {/* Display fee */}
                     </div>
                 </div>
                 <div className={styles.actions}>
-                    <button onClick={handleConfirmBooking} className={styles.confirmButton}>Confirm Booking</button>
-                    <button onClick={handleCancel} className={styles.cancelButton}>Cancel</button>
+                    <button onClick={handleConfirmBooking} className={styles.confirmButton}>
+                        Confirm Booking
+                    </button>
+                    <button onClick={() => alert('Booking confirmed.')} className={styles.cancelButton}>
+                        Cancel
+                    </button>
                 </div>
             </div>
             <BottomBanner />

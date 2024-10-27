@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import DateSlider from '../DateSlider/DateSlider';
 import styles from './SlotModal.module.css';
 
-const SlotModal = ({ isOpen, onClose, doctor }) => {
+const SlotModal = ({ isOpen, onClose, doctor, fee }) => { // Add fee as a prop
     const navigate = useNavigate();
     const [selectedDate, setSelectedDate] = useState(0);
     const [showForm, setShowForm] = useState(false); // Toggle for form visibility
@@ -27,8 +27,7 @@ const SlotModal = ({ isOpen, onClose, doctor }) => {
             setError('Please enter both name and phone number.');
             return;
         }
-
-        // Redirect to BookingDetails with patient details
+    
         navigate('/bookingdetails', {
             state: {
                 doctor,
@@ -36,6 +35,7 @@ const SlotModal = ({ isOpen, onClose, doctor }) => {
                 time: dates[selectedDate].slots[0], // Pass selected slot
                 patientName,
                 phoneNumber,
+                fee, // Include consultation fee
             }
         });
         onClose(); // Close the modal
@@ -61,10 +61,9 @@ const SlotModal = ({ isOpen, onClose, doctor }) => {
                         </div>
                     </>
                 ) : (
-                    // Patient Form for Name and Phone
                     <div className={styles.formContainer}>
                         <h3>Enter Patient Details</h3>
-                        {error && <p className={styles.error}>{error}</p>} {/* Error message */}
+                        {error && <p className={styles.error}>{error}</p>}
                         <input
                             type="text"
                             placeholder="Enter Name"
