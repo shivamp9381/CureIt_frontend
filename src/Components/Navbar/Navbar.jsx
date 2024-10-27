@@ -86,30 +86,8 @@ const Navbar = () => {
 
           <div className={style.navButtons}>
             <div className={style.navButton} onClick={toggleDropdown}>
-              <div className={style.navArr}>
               Services
               <i className={`fas fa-caret-down ${style.dropdownArrow} ${isDropdownOpen ? style.rotate : ''}`}></i>
-              </div>
-              {/* Single Dropdown for Services (Desktop) */}
-        {isDropdownOpen && (
-          <div className={style.verticalList}>
-            <Link to="/appointments" onClick={handleDropdownItemClick}>
-              <div>Book a doctor's appointment</div>
-            </Link>
-            <Link to="/book-test" onClick={handleDropdownItemClick}>
-              <div>Book a test online</div>
-            </Link>
-            <Link to="/buy-medicine" onClick={handleDropdownItemClick}>
-              <div>Buy Medicine</div>
-            </Link>
-            <Link to="/buy-insurance" onClick={handleDropdownItemClick}>
-              <div>Buy health insurance</div>
-            </Link>
-            <Link to="/emergency" onClick={handleDropdownItemClick}>
-              <div>Emergency</div>
-            </Link>
-          </div>
-        )}
             </div>
             <Link to="/partners"><button className={style.navButton}>For Partners</button></Link>
             <Link to="/doctors"><button className={style.navButton}>For Doctors</button></Link>
@@ -141,7 +119,26 @@ const Navbar = () => {
           </div>
         </div>
 
-        
+        {/* Single Dropdown for Services (Desktop) */}
+        {isDropdownOpen && (
+          <div className={style.verticalList}>
+            <Link to="/appointments" onClick={handleDropdownItemClick}>
+              <div>Book a doctor's appointment</div>
+            </Link>
+            <Link to="/labssearch" onClick={handleDropdownItemClick}>
+              <div>Book a test online</div>
+            </Link>
+            <Link to="/buy-medicine" onClick={handleDropdownItemClick}>
+              <div>Buy Medicine</div>
+            </Link>
+            <Link to="/buy-insurance" onClick={handleDropdownItemClick}>
+              <div>Buy health insurance</div>
+            </Link>
+            <Link to="/emergency" onClick={handleDropdownItemClick}>
+              <div>Emergency</div>
+            </Link>
+          </div>
+        )}
       </div>
 
       {/* Hamburger Menu */}
@@ -163,7 +160,7 @@ const Navbar = () => {
             <Link to="/appointments" onClick={handleDropdownItemClick}>
               <div>Book a doctor's appointment</div>
             </Link>
-            <Link to="/book-test" onClick={handleDropdownItemClick}>
+            <Link to="/labssearch" onClick={handleDropdownItemClick}>
               <div>Book a test online</div>
             </Link>
             <Link to="/buy-medicine" onClick={handleDropdownItemClick}>
