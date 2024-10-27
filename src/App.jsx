@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
@@ -22,7 +22,10 @@ import About from './Pages/About/About'
 import LabsSearch from './Pages/LabsSearch/LabsSearch'
 import Labs from './Pages/Labs/Labs'
 import LabBookingDetails from './Pages/LabBookingDetails/LabBookingDetails';
+import PaymentPage from './Pages/PaymentPage/PaymentPage'
+import  PaymentSuccess from './Pages/PaymentSuccess/PaymentSuccess'
 import DoctorDetails from './Pages/DoctorDetails/DoctorDetails'
+
 
 function App() {
   return (
@@ -71,10 +74,10 @@ function App() {
             exact path="/gynaecologist" element={<Gynaecologist />}
           />
           <Route
-            exact path="/eyes" element={<Eyes/>}
+            exact path="/eyes" element={<Eyes />}
           />
           <Route
-            exact path="/ent" element={<ENT/>}
+            exact path="/ent" element={<ENT />}
           />
           <Route
             exact path="/ortho" element={<Ortho />}
@@ -100,6 +103,21 @@ function App() {
           />
           <Route
             exact path="/doctordetails" element={<DoctorDetails />}
+          />
+
+          <Route 
+            exact path="/payment" element={<PaymentPage />} 
+          />
+
+          <Route 
+            exact path="/payment-success" element={<PaymentSuccess />}
+          />
+          <Route 
+            exact path="/lab-payment" element={<PaymentPage />} 
+          />
+
+          <Route 
+            exact path="/lab-payment-success" element={<PaymentSuccess />}
           />
 
         </Routes>
