@@ -22,8 +22,6 @@ import About from './Pages/About/About'
 import LabsSearch from './Pages/LabsSearch/LabsSearch'
 import Labs from './Pages/Labs/Labs'
 import LabBookingDetails from './Pages/LabBookingDetails/LabBookingDetails';
-import PaymentPage from './Pages/PaymentPage/PaymentPage';
-import PaymentSuccess from './Pages/PaymentSuccess/PaymentSuccess';
 
 function App() {
   return (
@@ -98,6 +96,9 @@ function App() {
           />
           <Route
             exact path="/labbookingdetails" element={<LabBookingDetails />}
+          />
+          <Route
+            exact path="/doctordetails" element={<DoctorDetails />}
           />
 
           <Route 
