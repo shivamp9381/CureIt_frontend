@@ -46,6 +46,10 @@ function App() {
           />
 
           <Route
+            exact path="/profile" element={<Login />}
+          />
+
+          <Route
             exact path="/signup" element={<SignUp />}
           />
 
