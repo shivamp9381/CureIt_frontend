@@ -19,6 +19,7 @@ import Ortho from './Pages/Ortho/Ortho';
 import Appointments from './Pages/Appointments/Appointments';
 import BookingDetails from './Pages/BookingDetails/BookingDetails'
 import About from './Pages/About/About'
+import DoctorDetails from './Pages/DoctorDetails/DoctorDetails';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route
             exact path="/dermatologist" element={<Dermatologist />}
           />
+          <Route path="/doctordetails" element={<DoctorDetails />} />
           <Route
             exact path="/stomach" element={<Stomach />}
           />

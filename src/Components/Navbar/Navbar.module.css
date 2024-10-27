@@ -10,7 +10,7 @@
   }
   
   .navContainer {
-    position: sticky;
+    position:relative;
     width: 100%;
     z-index: 1000;
     top: 0; 
@@ -58,13 +58,19 @@
   }
   
   .navButton {
-    background-color:#0f6590dc;
+    background-color: #0f6590dc;
     color: white;
+    display: flex;
+    flex-direction: column;
     padding: 13px 16px;
     border: none;
     border-radius: 24px;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 14px;
+    width: 107px;
+    height: 43px;
+    align-items: center;
+    /* justify-content: center; */
     text-align: center;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -72,7 +78,6 @@
   
   .navButton:hover {
     background-color: #088a03dc;
-    transform: translateY(-2px);
   }
   
   .dropdownArrow {
@@ -202,17 +207,18 @@
 } */
 
 .verticalList {
-  display: block; /* Controls visibility by default */
-  flex-direction: row;
-  justify-content: space-around;
-  gap: 10px;
   background-color: white;
-  padding: 15px 20px;
-  border-radius: 7px;
+  padding: 25px 25px;
+  margin-top: 32px;
+  margin-left: 6px;
+  border-radius: 8px;
   z-index: 1000;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   width: 20%;
+  position: absolute;
+  left: 17%;
+  display: inline-block;
 }
 
 .verticalList.show {
