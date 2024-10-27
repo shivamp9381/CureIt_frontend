@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import DateSlider from '../DateSlider/DateSlider'; // Assuming this component exists
+import DateSlider from '../DateSlider/DateSlider';
 import styles from './LabSlotModal.module.css';
 
-const LabSlotModal = ({ isOpen, onClose, lab }) => {
+const LabSlotModal = ({ isOpen, onClose, lab, fee }) => { // Add fee as a prop
     const navigate = useNavigate();
     const [selectedDate, setSelectedDate] = useState(0);
     const [showForm, setShowForm] = useState(false);
@@ -16,6 +16,7 @@ const LabSlotModal = ({ isOpen, onClose, lab }) => {
         { label: 'Tomorrow', slots: ['8:00 AM - 9:00 AM', '9:00 - 10:00 AM', '10:00 AM - 11:00 AM', '11:00 AM - 12:00 PM', '12:00 PM - 1:00 PM', '1:00 PM - 2:00 PM', '2:00 PM - 3:00 PM',  '3:00 PM - 4:00 PM',  '4:00 PM - 5:00 PM'] },
         { label: 'Sun, 27 Oct', slots: ['8:00 AM - 9:00 AM', '9:00 - 10:00 AM', '10:00 AM - 11:00 AM', '11:00 AM - 12:00 PM', '12:00 PM - 1:00 PM', '1:00 PM - 2:00 PM', '2:00 PM - 3:00 PM',  '3:00 PM - 4:00 PM',  '4:00 PM - 5:00 PM'] },
     ];
+
 
     const handleSlotClick = (slot) => {
         setShowForm(true);
@@ -35,6 +36,7 @@ const LabSlotModal = ({ isOpen, onClose, lab }) => {
                 time: dates[selectedDate].slots[0], // Pass selected slot
                 patientName,
                 phoneNumber,
+                fee, // Pass fee to LabBookingDetails
             }
         });
         onClose();

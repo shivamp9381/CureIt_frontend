@@ -1,0 +1,102 @@
+.paymentPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+    background-color: #f4f9ff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.paymentPage h2 {
+    color: #0077b6; /* Matches the blue tone of the logo */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.paymentPage p {
+    color: #333;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.paymentPage h3 {
+    color: #0eb5a4; /* A complementary green tone for healthcare feel */
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.paymentPage div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0;
+    width: 100%;
+}
+
+.paymentPage label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #e8f5fe;
+    border-radius: 8px;
+    border: 1px solid #d0e2f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: black;
+}
+
+.paymentPage label:hover {
+    background-color: #d1ecff;
+}
+
+.paymentPage input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #026ca5;
+    transform: scale(1.2);
+}
+
+.paymentPage {
+    width: 100%;
+    padding: 12px;
+    background-color: #0077b6;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.paymentPage button{
+    background-color: #0077b6;
+    width: 7rem;
+    height: 3rem;
+    border-radius: 4rem;
+}
+.paymentPage button:hover {
+    background-color: #13a90e;
+}
+
+.paymentPage label:hover{
+    background-color: #13a90e;
+}
+
+
+@media (max-width: 600px) {
+    .payment-page {
+        padding: 15px;
+        width: 90%;
+    }
+
+    .paymentPage h2 {
+        font-size: 1.5rem;
+    }
+
+    .paymentPage button {
+        font-size: 1rem;
+    }
+}
