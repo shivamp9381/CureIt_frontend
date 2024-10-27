@@ -22,6 +22,10 @@ import About from './Pages/About/About'
 import LabsSearch from './Pages/LabsSearch/LabsSearch'
 import Labs from './Pages/Labs/Labs'
 import LabBookingDetails from './Pages/LabBookingDetails/LabBookingDetails';
+import PaymentPage from './Pages/PaymentPage/PaymentPage'
+import  PaymentSuccess from './Pages/PaymentSuccess/PaymentSuccess'
+import DoctorDetails from './Pages/DoctorDetails/DoctorDetails'
+
 
 function App() {
   return (
