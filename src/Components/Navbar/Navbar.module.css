@@ -61,7 +61,6 @@
     background-color: #0f6590dc;
     color: white;
     display: flex;
-    flex-direction: column;
     padding: 13px 16px;
     border: none;
     border-radius: 24px;
@@ -70,7 +69,7 @@
     width: 107px;
     height: 43px;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     text-align: center;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -209,7 +208,7 @@
 .verticalList {
   background-color: white;
   padding: 25px 25px;
-  margin-top: 32px;
+  margin-top: 0px;
   margin-left: 6px;
   border-radius: 8px;
   z-index: 1000;

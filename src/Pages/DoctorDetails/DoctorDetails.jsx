@@ -23,12 +23,10 @@ const DoctorDetail = () => {
           alt={`${appointmentsData.doctor?.name || "Doctor"} Profile`}
           className={styles.doctorImage}
         />
-        <div className={styles.doctorInfo}>
+        <div className={styles.doctorName}>
           <h1>{appointmentsData.doctor?.name || "Doctor's Name"}</h1>
-          <p>
-            <strong>Speciality:</strong>{" "}
-            {appointmentsData.doctor?.speciality || "Speciality not available"}
-          </p>
+          <h3>{appointmentsData.doctor?.speciality || "Speciality not available"}</h3>
+          <div className={styles.doctorInfo}>
           <p>
             <strong>Clinic:</strong>{" "}
             {appointmentsData.doctor?.clinic || "Clinic not available"}
@@ -57,6 +55,7 @@ const DoctorDetail = () => {
             <strong>Availability:</strong>{" "}
             {appointmentsData.available ? "Available Today" : "Not Available"}
           </p>
+          </div>
         </div>
       </div>
       <BottomBanner />
