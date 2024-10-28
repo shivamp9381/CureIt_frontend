@@ -138,7 +138,7 @@ const Appointments = () => {
             <AppointmentCard
               key={index}
               {...appointment}
-              onBookClick={() => handleBookClick(appointment.doctor)}
+              onBookClick={() => handleBookClick(appointment)}
               onDocProfileClick={() => handleDocProfileClick(appointment)}
             />
           ))
@@ -153,6 +153,7 @@ const Appointments = () => {
           isOpen={showModal}
           onClose={closeModal}
           doctor={selectedDoctor}
+          fee={selectedDoctor.fee}
         />
       )}
 

@@ -5,6 +5,9 @@ import styles from '../PaymentSuccess/PaymentSuccess.module.css';
 const LabPaymentSuccess = () => {
     const location = useLocation();
     const navigate = useNavigate();
+
+
+    
     // const { lab, date, time, patientName, phoneNumber, fee } = location.state || {};
     const { lab = {}, date, time, patientName, phoneNumber, fee } = location.state || {};
 
@@ -12,6 +15,7 @@ const LabPaymentSuccess = () => {
     const handleGoHome = () => {
         navigate('/');
     };
+
 
     return (
         <div className={styles.paymentSuccess}>
