@@ -82,6 +82,7 @@ li:hover {
     min-width: 250px;
     margin-bottom: 20px;
     position: relative;
+    padding-left: 20px;
 }
 
 .footer_section h3 {
@@ -128,7 +129,7 @@ li:hover {
 .complaint_form button {
     padding: 14px 20px;
     width: 100%;
-    background-color: #34a853;
+    background-color: #0f6590dc;
     color: #fff;
     border: none;
     border-radius: 8px;

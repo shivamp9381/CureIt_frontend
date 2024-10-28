@@ -1,0 +1,92 @@
+/* DoctorDetails.module.css */
+
+.doctorDetailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 30px;
+    margin: 20px 180px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .doctorImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit:contain;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .doctorName {
+    text-align: left;
+    width: 100%;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+
+  .doctorInfo{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 30px;
+  }
+
+  .doctorName h1{
+    text-align: center;
+  }
+
+  .doctorName h3{
+    text-align: center;
+  }
+  
+  .doctorName p {
+    font-size: 18px;
+    color: #34495e;
+    margin: 5px 0;
+  }
+  
+  .doctorName p strong {
+    color: #2980b9;
+  }
+  
+  @media (max-width: 930px) {
+    .doctorDetailContainer {
+      padding: 10px;
+      margin: 20px 40px;
+    }
+   
+    .doctorInfo p {
+      font-size: 14px;
+    }
+  
+    .doctorImage {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  
+
+    
+  @media (max-width: 600px) {
+    .doctorDetailContainer {
+      padding: 10px;
+      margin: 20px 40px;
+    }
+   
+    .doctorInfo h1{
+        font-size: 30px;
+    }
+
+    .doctorInfo h3{
+        font-size: 18px;
+    }
+  
+    .doctorImage {
+      width: 120px;
+      height: 120px;
+    }
+  }

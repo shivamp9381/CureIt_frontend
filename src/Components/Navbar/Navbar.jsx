@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import style from './Navbar.module.css';
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import style from "./Navbar.module.css";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [isMobileDropdownOpen, setMobileDropdownOpen] = useState(false); // Separate state for mobile dropdown
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navRef = useRef(null);
@@ -13,7 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     setIsLoggedIn(!!token);
   }, []);
 
@@ -23,17 +22,11 @@ const Navbar = () => {
   };
 
   const handleProfileClick = () => {
-    if (isLoggedIn) {
-      setIsProfileDropdownOpen(!isProfileDropdownOpen);
-    } else {
-      navigate('/login');
-    }
+    navigate("/profile");
   };
 
   const handleAboutClick = () => {
-    
-      navigate('/about');
-    
+    navigate("/about");
   };
   const handleDropdownItemClick = () => {
     setIsDropdownOpen(false); // Close dropdown when an item is clicked
@@ -51,17 +44,20 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (profileRef.current && !profileRef.current.contains(event.target)) {
-        setIsProfileDropdownOpen(false);
-      }
-      if (isNavOpen && navRef.current && !navRef.current.contains(event.target)) {
+      
+      
+      if (
+        isNavOpen &&
+        navRef.current &&
+        !navRef.current.contains(event.target)
+      ) {
         setIsNavOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -87,11 +83,21 @@ const Navbar = () => {
           <div className={style.navButtons}>
             <div className={style.navButton} onClick={toggleDropdown}>
               Services
-              <i className={`fas fa-caret-down ${style.dropdownArrow} ${isDropdownOpen ? style.rotate : ''}`}></i>
+              <i
+                className={`fas fa-caret-down ${style.dropdownArrow} ${
+                  isDropdownOpen ? style.rotate : ""
+                }`}
+              ></i>
             </div>
-            <Link to="/partners"><button className={style.navButton}>For Partners</button></Link>
-            <Link to="/doctors"><button className={style.navButton}>For Doctors</button></Link>
-            <button onClick={handleAboutClick} className={style.navButton}>About Us</button>
+            <Link to="/partners">
+              <button className={style.navButton}>For Partners</button>
+            </Link>
+            <Link to="/doctors">
+              <button className={style.navButton}>For Doctors</button>
+            </Link>
+            <button onClick={handleAboutClick} className={style.navButton}>
+              About Us
+            </button>
           </div>
 
           <div className={style.rightSection}>
@@ -104,18 +110,13 @@ const Navbar = () => {
               <i className={`fas fa-search ${style.searchIcon}`}></i>
             </div>
 
-            <div className={style.profile} onClick={handleProfileClick} ref={profileRef}>
+            <div
+              className={style.profile}
+              onClick={handleProfileClick}
+              ref={profileRef}
+            >
               <i className="fas fa-user"></i>
             </div>
-
-            {isLoggedIn && isProfileDropdownOpen && (
-              <div className={style.profileDropdown}>
-                <a href="">Your Profile</a>
-                <a href="">Track Your Order</a>
-                <a href="">Customer Service</a>
-                <a href="">Sign Out</a>
-              </div>
-            )}
           </div>
         </div>
 
@@ -143,7 +144,9 @@ const Navbar = () => {
 
       {/* Hamburger Menu */}
       <div
-        className={`${style.hamburgerMenu} ${isNavOpen ? style.hamburgerActive : ''}`}
+        className={`${style.hamburgerMenu} ${
+          isNavOpen ? style.hamburgerActive : ""
+        }`}
         ref={navRef}
       >
         <button onClick={toggleNav} className={style.closeHamburger}>
@@ -152,11 +155,19 @@ const Navbar = () => {
 
         <div className={style.hamBtn} onClick={toggleMobileDropdown}>
           Services
-          <i className={`fas fa-caret-down ${style.dropdownArrow} ${isMobileDropdownOpen ? style.rotate : ''}`}></i>
+          <i
+            className={`fas fa-caret-down ${style.dropdownArrow} ${
+              isMobileDropdownOpen ? style.rotate : ""
+            }`}
+          ></i>
         </div>
 
         {isMobileDropdownOpen && (
-          <div className={`${style.vertiList} ${isMobileDropdownOpen ? style.show : ''}`}>
+          <div
+            className={`${style.vertiList} ${
+              isMobileDropdownOpen ? style.show : ""
+            }`}
+          >
             <Link to="/appointments" onClick={handleDropdownItemClick}>
               <div>Book a doctor's appointment</div>
             </Link>
@@ -183,7 +194,9 @@ const Navbar = () => {
         </Link>
         <div className={style.hamBtn}>About Us</div>
 
-        <div onClick={handleProfileClick} className={style.hamBtn}>Your Profile</div>
+        <div onClick={handleProfileClick} className={style.hamBtn}>
+          Your Profile
+        </div>
       </div>
     </>
   );

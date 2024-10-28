@@ -21,7 +21,8 @@ const Appointments = () => {
     {
       doctor: {
         name: "Doctor's Name",
-        image: "https://i.ibb.co/QYH37gg/doctor-profile.png",
+        image:
+          "https://plus.unsplash.com/premium_photo-1693258698597-1b2b1bf943cc?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         speciality: "Physician",
         clinic: "Clinic's Name",
       },
@@ -41,9 +42,10 @@ const Appointments = () => {
     },
     {
       doctor: {
-        name: "2Name",
-        image: "https://i.ibb.co/QYH37gg/doctor-profile.png",
-        speciality: "Dermat",
+        name: "Sagar Saggu",
+        image:
+          "https://plus.unsplash.com/premium_photo-1689562473471-6e736b8afe15?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        speciality: "Dermatologist",
         clinic: " Name",
       },
       experience: 10,

@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Home from './Pages/Home/Home';
+import Profile from "./Pages/Profile/Profile"; 
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import Physician from './Pages/Physician/Physician'
@@ -43,6 +44,10 @@ function App() {
 
           <Route
             exact path="/login" element={<Login />}
+          />
+
+          <Route
+            exact path="/profile" element={<Profile />}
           />
 
           <Route
