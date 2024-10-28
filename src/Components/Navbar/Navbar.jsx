@@ -5,7 +5,6 @@ import style from "./Navbar.module.css";
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [isMobileDropdownOpen, setMobileDropdownOpen] = useState(false); // Separate state for mobile dropdown
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navRef = useRef(null);
@@ -45,9 +44,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (profileRef.current && !profileRef.current.contains(event.target)) {
-        setIsProfileDropdownOpen(false);
-      }
+      
+      
       if (
         isNavOpen &&
         navRef.current &&

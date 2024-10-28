@@ -10,10 +10,10 @@ const Profile = () => {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
-    name: "John Doe",
-    email: "johndoe@example.com",
+    name: "Pandeyji ka ladka",
+    email: "shivam.indian@example.com",
     phone: "123-456-7890",
-    location: "New York, NY",
+    location: "Banaras, UP",
     profilePic: "https://i.ibb.co/QYH37gg/doctor-profile.png",
   });
 
