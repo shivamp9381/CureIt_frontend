@@ -127,10 +127,12 @@
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     display: inline-block;
     opacity: 0;
+    border-radius: 10px;
+    border: none;
     transform: translateY(20px);
     transition: opacity 1s ease-in-out 0.8s, transform 1s ease-in-out 0.8s, background-color 0.3s ease, box-shadow 0.3s ease;
   }
-  
+
   .active .shopBtn {
     opacity: 1;
     transform: translateY(0);

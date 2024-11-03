@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Hero.module.css';
 
 const slides = [
@@ -9,6 +10,7 @@ const slides = [
     subtitle: 'Shop Get your appointment booked in 3 easy steps!',
     description: 'Explore now for more details',
     button: 'Book Now',
+    link: '/appointments',
   },
   {
     id: 2,
@@ -43,10 +45,12 @@ const slides2 = [
   },
 ];
 
+
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const navigate = useNavigate();
 
   const handleResize = useCallback(() => {
     setIsMobile(window.innerWidth < 570);
@@ -82,6 +86,12 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [moveSlide]);
 
+  const handleButtonClick = (link) => {
+    if (link) {
+      navigate(link);
+    }
+  };
+
   return (
     <div className={styles.sliderContainer}>
       <div className={styles.slidesWrapper}>
@@ -100,9 +110,12 @@ const Hero = () => {
                 <h1>{slide.title}</h1>
                 <h2>{slide.subtitle}</h2>
                 <p>{slide.description}</p>
-                <a href="#" className={styles.shopBtn}>
+                <button
+                  className={styles.shopBtn}
+                  onClick={() => handleButtonClick(slide.link)}
+                >
                   {slide.button}
-                </a>
+                </button>
               </div>
             )}
           </div>
