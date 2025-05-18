@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Syne", sans-serif;
+}
+
+.footer {
+    background-color: #236112;
+    color: white;
+    padding: 50px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footerSection {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #E5FFCC;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #9eff4e;
+}
+
+.sectionTitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #FFDF87;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 8px 0;
+    font-size: 15px;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+li:hover {
+    color: #FFF2CC;
+}
+
+.footerBottom {
+    text-align: center;
+    margin-top: 30px;
+    color: #B2FF99;
+}
+
+.copyright {
+    font-size: 15px;
+    margin-top: 20px;
+    color: #E0FFD1;
+}
+
+.footer_section {
+    width: 25%;
+    min-width: 250px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.footer_section h3 {
+    color: #E8FFDD;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.footer_section p,
+.footer_section a {
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: none;
+    line-height: 1.8;
+}
+
+.footer_section h3{
+    margin-left: 1rem;
+}
+
+.footer_section a:hover {
+    color: #E5FFCC;
+}
+
+.complaint_form form {
+    margin-left: 1rem;
+    width: 100%;
+}
+
+.complaint_form input[type="text"],
+.complaint_form input[type="email"],
+.complaint_form textarea {
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #2a3a32;
+    color: #eee;
+    font-size: 14px;
+}
+
+.complaint_form button {
+    padding: 14px 20px;
+    width: 100%;
+    background-color: #0f6590dc;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.complaint_form button:hover {
+    background-color: #45bf5b;
+}
+
+.social_icons {
+    margin-top: 20px;
+}
+
+.social_icons a {
+    font-size: 22px;
+    margin-right: 15px;
+    color: #E5FFCC;
+    transition: color 0.3s ease;
+}
+
+.social_icons a:hover {
+    color: #FFDF87;
+}
+
+@media (max-width: 850px) {
+    .footerContainer {
+        align-items: stretch; 
+    }
+
+    .footerSection {
+        margin-bottom: 20px; 
+        flex: 0 1 calc(50% - 20px); 
+    }
+    
+    .footerSection:nth-child(2),
+    .footerSection:nth-child(3) {
+        order: 1; 
+    }
+}
+
+@media (max-width: 500px) {
+    .footerContainer {
+        flex-direction: column; 
+        align-items: stretch; 
+    }
+
+    .footerSection {
+        flex: 1 1 100%; 
+        margin-bottom: 20px; 
+    }
+
+    .footerBottom {
+        text-align: center;
+    }
+}
+
+/* Subtle hover effect */
+li:hover::before {
+    content: '➤ ';
+    color: #FFDF87;
+}
+

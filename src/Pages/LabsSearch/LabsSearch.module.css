@@ -1,0 +1,125 @@
+/* Main Container */
+.searchLabsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://i.ibb.co/LSRkDjv/cureit-logo.jpg"); /* Background image from Cureit */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 20px;
+}
+
+.searchLabsContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 101, 144, 0.6); /* Semi-transparent overlay */
+    z-index: 0;
+}
+
+/* Search Form Container */
+.inputLabsContainer {
+    position: relative;
+    z-index: 1; /* Bring form above overlay */
+    display: flex;
+    align-items: center;
+    border: 2px solid #0f6590;
+    border-radius: 50px;
+    padding: 8px 16px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    transition: all 0.3s ease;
+}
+
+.inputLabsContainer:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+    border-color: #088a03; /* Green border on hover */
+}
+
+/* Search Input */
+.searchLabs {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    font-size: 1rem;
+    color: #333;
+    border-radius: 50px;
+    flex-grow: 1;
+    background-color: #f0f4f8;
+    transition: background-color 0.3s;
+}
+
+.searchLabs:focus {
+    background-color: #e0f7fa;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Soft blue shadow */
+}
+
+/* Search Button (Icon) */
+.searchButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.searchButton:active {
+    transform: scale(0.95); /* Scale down on click */
+}
+
+.searchIconLabs {
+    font-size: 1.5rem;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.searchIconLabs:hover {
+    color: #004c9d;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .inputLabsContainer {
+        width: 95%; /* Expand width on smaller screens */
+        padding: 6px 12px;
+    }
+
+    .searchLabs {
+        font-size: 0.9rem; /* Smaller font size on mobile */
+        padding: 10px;
+    }
+
+    .searchIconLabs {
+        font-size: 1.2rem; /* Smaller icon size */
+    }
+}
+
+@media (max-width: 480px) {
+    .searchLabsContainer {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .inputLabsContainer {
+        padding: 6px; /* Compact padding */
+    }
+
+    .searchLabs {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+
+    .searchIconLabs {
+        font-size: 1rem;
+    }
+}

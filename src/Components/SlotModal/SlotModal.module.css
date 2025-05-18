@@ -1,0 +1,148 @@
+/* Modal Overlay */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay for focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Styling */
+.modal {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Date Selection Title */
+.modal h2 {
+    color: #0f6590;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+}
+
+/* Slot Section */
+.slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.slotButton {
+    background-color: #0f6590;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.slotButton:hover {
+    background-color: #088a03;
+    transform: scale(1.05);
+}
+
+/* Form Container for Patient Details */
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Input Fields */
+.formInput {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #0f6590;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #e0f7fa;
+    color: #0f6590;
+    transition: border-color 0.3s ease;
+}
+
+.formInput:focus {
+    border-color: #088a03;
+    outline: none;
+}
+
+.submitButton {
+    padding: 12px 20px;
+    background-color: #088a03;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submitButton:hover {
+    background-color: #0f6590;
+    transform: scale(1.05);
+}
+
+/* Close Button */
+.closeButton {
+    background: #888;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+    background-color: #666;
+}
+
+@media (max-width: 480px) {
+    .modal {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .slots {
+        gap: 8px;
+    }
+
+    .slotButton {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .formInput {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .submitButton, .closeButton {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

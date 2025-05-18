@@ -1,0 +1,53 @@
+.dateSlider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.dateItem {
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+    color: #0f6590;
+    font-weight: 500;
+}
+
+.dateItem.selected {
+    background-color: #00bcd4;
+    color: #ffffff;
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+.arrow {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #0f6590;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.arrow:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.arrow:hover:not(:disabled) {
+    color: #088a03;
+}
+
+@media (max-width: 480px) {
+    .dateItem {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}

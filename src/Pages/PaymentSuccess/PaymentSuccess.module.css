@@ -1,0 +1,69 @@
+.whole{
+  background: white; 
+  padding-top: 2rem; 
+  padding-bottom: 2rem; 
+  justify-items: center;
+}
+
+.payment-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #f4f9ff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.paymentSuccess h2 {
+    color: #0077b6; /* A strong, professional blue */
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.paymentSuccess p {
+    color: #333;
+    font-size: 1rem;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.paymentSuccess button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #0077b6; /* A calming green to reflect healthcare */
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.paymentSuccess button:hover {
+    background-color: #13a90e;
+}
+
+@media (max-width: 600px) {
+    .payment-success {
+        padding: 15px;
+        width: 90%;
+    }
+
+    .paymentSuccess h2 {
+        font-size: 1.5rem;
+    }
+
+    .paymentSuccess p {
+        font-size: 0.9rem;
+    }
+
+    .paymentSuccess button {
+        font-size: 1rem;
+    }
+}

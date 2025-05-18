@@ -1,0 +1,70 @@
+.appointmentCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 128, 128, 0.1); 
+    background-color: #f3f8fb; 
+    width: 100%;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.appointmentCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 128, 128, 0.3); 
+}
+
+.doctorInfo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.doctorImage {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 50px;
+    border: 3px solid #0f6590; 
+}
+
+.ratingStories {
+    margin-top: 10px;
+}
+
+.rating {
+    color: #0f6590; 
+    font-weight: bold;
+}
+
+.availableStatus {
+    color: #088a03; 
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.bookBtn,
+.docProfile {
+    background-color: #0f6590;
+    color: white;
+    margin-top: 1rem;
+    padding: 12px 24px;
+    width: calc(50% - 10px);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.bookBtn:hover,
+.docProfile:hover {
+    background-color: #088a03; 
+    transform: translateY(-2px);
+}
