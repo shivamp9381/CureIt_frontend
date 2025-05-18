@@ -3,7 +3,7 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import BottomBanner from "../../Components/BottomBanner/BottomBanner";
 import Footer from "../../Components/Footer/Footer";
-import AppointmentCard from "../../Components/AppointtmentCard/AppointmentCard";
+import AppointmentCard from "../../Components/AppointmentCard/AppointmentCard";
 import SlotModal from "../../Components/SlotModal/SlotModal"; // Import the SlotModal component
 import styles from "./Appointments.module.css";
 
